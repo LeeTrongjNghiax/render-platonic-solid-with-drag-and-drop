@@ -19,6 +19,10 @@ let objectVertexIndicesLength;
 let scaleUniformLocation;
 let faceGapUniformLocation;
 
+let rotateXSpeed = 0;
+let rotateYSpeed = 0;
+let rotateZSpeed = 0;
+
 const createPlatonicSolid = async () => {
   const canvas = document.querySelector(`.c-main__canvas`);
 
@@ -427,8 +431,9 @@ const createPlatonicSolid = async () => {
       gl.STENCIL_BUFFER_BIT
     );
 
-    // orientationXAngle += angle / 3;
-    // orientationYAngle += angle / 4;
+    orientationXAngle += angle * rotateXSpeed;
+    orientationYAngle += angle * rotateYSpeed;
+    orientationZAngle += angle * rotateZSpeed;
 
     updateCamera();
 
@@ -611,8 +616,14 @@ const initiateForm = () => {
     form.addEventListener(`input`, () => {
       createPlatonicSolid();
     });
+    platonicSolidType.addEventListener(`change`, () => {
+      createPlatonicSolid();
+    });
   } else {
     form.removeEventListener(`input`, () => {
+      createPlatonicSolid();
+    });
+    platonicSolidType.removeEventListener(`change`, () => {
       createPlatonicSolid();
     });
   }
@@ -622,16 +633,44 @@ const initiateForm = () => {
       form.addEventListener(`input`, () => {
         createPlatonicSolid();
       });
+      platonicSolidType.addEventListener(`change`, () => {
+        createPlatonicSolid();
+      });
     } else {
       form.removeEventListener(`input`, () => {
+        createPlatonicSolid();
+      });
+      platonicSolidType.removeEventListener(`change`, () => {
         createPlatonicSolid();
       });
     }
   });
 
-  scale.addEventListener(`input`, (event) => {
-    
-  });
+  const isAutoRotate = document.querySelector(`#is-auto-rotate`);
+
+  if (!isAutoRotate) throw new Error(`Is auto rotate not found`);
+
+  if (isAutoRotate.checked) {
+    rotateXSpeed = 1;
+    rotateYSpeed = 1;
+    rotateZSpeed = 1;
+  } else {
+    rotateXSpeed = 0;
+    rotateYSpeed = 0;
+    rotateZSpeed = 0;
+  }
+  
+  isAutoRotate.addEventListener(`change`, (event) => {
+    if (isAutoRotate.checked) {
+      rotateXSpeed = 1;
+      rotateYSpeed = 1;
+      rotateZSpeed = 1;
+    } else {
+      rotateXSpeed = 0;
+      rotateYSpeed = 0;
+      rotateZSpeed = 0;
+    }
+  })
 }
 
 document.addEventListener(`DOMContentLoaded`, initiateForm);
