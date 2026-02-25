@@ -650,10 +650,46 @@ const initiateForm = () => {
 
   if (!isAutoRotate) throw new Error(`Is auto rotate not found`);
 
+  const autoRotateXSpeed = document.querySelector(`#auto-rotate-x-speed`);
+
+  if (!autoRotateXSpeed) throw new Error(`Auto rotate x speed not found`);
+
+  rotateXSpeed = +autoRotateXSpeed.value;
+
+  autoRotateXSpeed.addEventListener(`input`, (event) => {
+    if (isAutoRotate.checked) {
+      rotateXSpeed = +event.target.value;
+    }
+  });
+
+  const autoRotateYSpeed = document.querySelector(`#auto-rotate-y-speed`);
+
+  if (!autoRotateYSpeed) throw new Error(`Auto rotate y speed not found`);
+
+  rotateYSpeed = +autoRotateYSpeed.value;
+
+  autoRotateYSpeed.addEventListener(`input`, (event) => {
+    if (isAutoRotate.checked) {
+      rotateYSpeed = +event.target.value;
+    }
+  });
+
+  const autoRotateZSpeed = document.querySelector(`#auto-rotate-z-speed`);
+
+  if (!autoRotateZSpeed) throw new Error(`Auto rotate z speed not found`);
+
+  rotateZSpeed = +autoRotateZSpeed.value;
+
+  autoRotateZSpeed.addEventListener(`input`, (event) => {
+    if (isAutoRotate.checked) {
+      rotateZSpeed = +event.target.value;
+    }
+  });
+
   if (isAutoRotate.checked) {
-    rotateXSpeed = 1;
-    rotateYSpeed = 1;
-    rotateZSpeed = 1;
+    rotateXSpeed = +autoRotateXSpeed.value;
+    rotateYSpeed = +autoRotateYSpeed.value;
+    rotateZSpeed = +autoRotateZSpeed.value;
   } else {
     rotateXSpeed = 0;
     rotateYSpeed = 0;
@@ -662,15 +698,16 @@ const initiateForm = () => {
   
   isAutoRotate.addEventListener(`change`, (event) => {
     if (isAutoRotate.checked) {
-      rotateXSpeed = 1;
-      rotateYSpeed = 1;
-      rotateZSpeed = 1;
+      rotateXSpeed = +autoRotateXSpeed.value;
+      rotateYSpeed = +autoRotateYSpeed.value;
+      rotateZSpeed = +autoRotateZSpeed.value;
     } else {
       rotateXSpeed = 0;
       rotateYSpeed = 0;
       rotateZSpeed = 0;
     }
-  })
+  });
+
 }
 
 document.addEventListener(`DOMContentLoaded`, initiateForm);
