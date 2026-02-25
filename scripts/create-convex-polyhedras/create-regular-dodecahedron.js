@@ -4,7 +4,6 @@ import hexToUnitArray from "../utilities/hex-to-unit-array.js";
 
 const createRegularDodecahedron = ({
   scale = 1,
-  gapScale = 0,
   colors = {
     'up-front': 0xffffffff, // White
     'up-back': 0xffff00ff, // Yellow
@@ -21,7 +20,6 @@ const createRegularDodecahedron = ({
   },
 }) => {
   const faces = [
-    // Up Front Face
     {
       color: colors['up-front'],
       vertices: [
@@ -63,7 +61,6 @@ const createRegularDodecahedron = ({
       ]
     },
 
-    // Up Back Face
     {
       color: colors['up-back'],
       vertices: [
@@ -105,7 +102,6 @@ const createRegularDodecahedron = ({
       ]
     },
 
-    // Up Right Face
     {
       color: colors['up-right'],
       vertices: [
@@ -147,7 +143,6 @@ const createRegularDodecahedron = ({
       ]
     },
 
-    // Up Left Face
     {
       color: colors['up-left'],
       vertices: [
@@ -189,7 +184,6 @@ const createRegularDodecahedron = ({
       ]
     },
 
-    // Down Front Face
     {
       color: colors['down-front'],
       vertices: [
@@ -231,7 +225,6 @@ const createRegularDodecahedron = ({
       ]
     },
 
-    // Down Back Face
     {
       color: colors['down-back'],
       vertices: [
@@ -273,7 +266,6 @@ const createRegularDodecahedron = ({
       ]
     },
 
-    // Down Right Face
     {
       color: colors['down-right'],
       vertices: [
@@ -315,7 +307,6 @@ const createRegularDodecahedron = ({
       ]
     },
 
-    // Down Left Face
     {
       color: colors['down-left'],
       vertices: [
@@ -357,7 +348,6 @@ const createRegularDodecahedron = ({
       ]
     },
 
-    // Front Right Face
     {
       color: colors['front-right'],
       vertices: [
@@ -399,7 +389,6 @@ const createRegularDodecahedron = ({
       ]
     },
 
-    // Front Left Face
     {
       color: colors['front-left'],
       vertices: [
@@ -441,7 +430,6 @@ const createRegularDodecahedron = ({
       ]
     },
 
-    // Back Right Face
     {
       color: colors['back-right'],
       vertices: [
@@ -483,7 +471,6 @@ const createRegularDodecahedron = ({
       ]
     },
 
-    // Back Left Face
     {
       color: colors['back-left'],
       vertices: [
@@ -560,11 +547,8 @@ const createRegularDodecahedron = ({
     face.normal = normalizedNormal;
 
     face.vertices.forEach(vertex => {
-      vertex.position.x += gapScale * normalizedNormal.x; 
-      vertex.position.y += gapScale * normalizedNormal.y;
-      vertex.position.z += gapScale * normalizedNormal.z;
-
       vertices.push(vertex.position.x, vertex.position.y, vertex.position.z);
+      vertices.push(normalizedNormal.x, normalizedNormal.y, normalizedNormal.z);
       vertices.push(...hexToUnitArray(face.color));
     });
   });

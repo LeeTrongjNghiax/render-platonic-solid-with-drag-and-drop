@@ -142,19 +142,30 @@ const createPlatonicSolid = async () => {
     3,
     gl.FLOAT,
     false,
-    7 * Float32Array.BYTES_PER_ELEMENT,
+    10 * Float32Array.BYTES_PER_ELEMENT,
     0
   );
   gl.enableVertexAttribArray(positionAttributeLocationIndex);
 
-  const colorAttributeLocationIndex = 1;
+  const normalAttributeLocationIndex = 1;
+  gl.vertexAttribPointer(
+    normalAttributeLocationIndex,
+    3,
+    gl.FLOAT,
+    false,
+    10 * Float32Array.BYTES_PER_ELEMENT,
+    3 * Float32Array.BYTES_PER_ELEMENT,
+  );
+  gl.enableVertexAttribArray(normalAttributeLocationIndex);
+
+  const colorAttributeLocationIndex = 2;
   gl.vertexAttribPointer(
     colorAttributeLocationIndex,
     4,
     gl.FLOAT,
     false,
-    7 * Float32Array.BYTES_PER_ELEMENT,
-    3 * Float32Array.BYTES_PER_ELEMENT,
+    10 * Float32Array.BYTES_PER_ELEMENT,
+    6 * Float32Array.BYTES_PER_ELEMENT,
   );
   gl.enableVertexAttribArray(colorAttributeLocationIndex);
 

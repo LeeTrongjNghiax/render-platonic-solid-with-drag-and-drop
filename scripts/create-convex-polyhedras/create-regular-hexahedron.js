@@ -2,7 +2,6 @@ import hexToUnitArray from "../utilities/hex-to-unit-array.js";
 
 const createRegularHexahedron = ({
   scale = 1,
-  gapScale = 0,
   colors = {
     'up': 0xffffffff, // White
     'down': 0xffff00ff, // Yellow
@@ -252,11 +251,8 @@ const createRegularHexahedron = ({
     face.normal = normalizedNormal;
 
     face.vertices.forEach(vertex => {
-      vertex.position.x += gapScale * normalizedNormal.x; 
-      vertex.position.y += gapScale * normalizedNormal.y;
-      vertex.position.z += gapScale * normalizedNormal.z;
-
       vertices.push(vertex.position.x, vertex.position.y, vertex.position.z);
+      vertices.push(normalizedNormal.x, normalizedNormal.y, normalizedNormal.z);
       vertices.push(...hexToUnitArray(face.color));
     });
   });

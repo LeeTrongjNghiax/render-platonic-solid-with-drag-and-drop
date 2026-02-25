@@ -2,7 +2,6 @@ import hexToUnitArray from "../utilities/hex-to-unit-array.js";
 
 const createRegularTetrahedron = ({
   scale = 1,
-  gapScale = 0,
   colors = {
     'down-front-right': 0xffff00ff, // Yellow
     'down-back-left': 0x0000ffff, // Blue
@@ -154,11 +153,8 @@ const createRegularTetrahedron = ({
     face.normal = normalizedNormal;
 
     face.vertices.forEach(vertex => {
-      vertex.position.x += gapScale * normalizedNormal.x; 
-      vertex.position.y += gapScale * normalizedNormal.y;
-      vertex.position.z += gapScale * normalizedNormal.z;
-
       vertices.push(vertex.position.x, vertex.position.y, vertex.position.z);
+      vertices.push(normalizedNormal.x, normalizedNormal.y, normalizedNormal.z);
       vertices.push(...hexToUnitArray(face.color));
     });
   });
