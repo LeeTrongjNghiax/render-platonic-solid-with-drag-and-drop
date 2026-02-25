@@ -77,90 +77,6 @@
         <div class="c-form__fieldset-container u-flex-1">
           <fieldset class="c-form__fieldset">
             <legend class="c-form__fieldset-legend">
-              Shape Configuration
-            </legend>
-
-            <div class="c-form__input-group">
-              <label for="scale">Scale:</label>
-
-              <div class="c-slider-input u-flex-1">
-                <input
-                  type="number"
-                  id="scale-lower-bound"
-                  name="scale-lower-bound"
-                  class="c-slider-input__input-lower"
-                  step="0.01"
-                  value="0"
-                >
-
-                <div class="c-slider-input__input-range-container">
-                  <input
-                    type="range"
-                    id="scale"
-                    name="scale"
-                    class="c-slider-input__input-range"
-                    step="0.01"
-                    value="0.5"
-                  >
-
-                  <div class="c-slider-input__input-range-value">
-                    -
-                  </div>
-                </div>
-
-                <input
-                  type="number"
-                  id="scale-upper-bound"
-                  name="scale-upper-bound"
-                  class="c-slider-input__input-upper"
-                  step="0.01"
-                  value="1"
-                >
-              </div>
-            </div>
-
-            <div class="c-form__input-group">
-              <label for="face-gap">Face Gap:</label>
-
-              <div class="c-slider-input u-flex-1">
-                <input
-                  type="number"
-                  id="face-gap-lower-bound"
-                  name="face-gap-lower-bound"
-                  class="c-slider-input__input-lower"
-                  step="0.01"
-                  value="-2"
-                >
-
-                <div class="c-slider-input__input-range-container">
-                  <input
-                    type="range"
-                    id="face-gap"
-                    name="face-gap"
-                    class="c-slider-input__input-range"
-                    step="0.01"
-                    value="0"
-                  >
-
-                  <div class="c-slider-input__input-range-value">
-                    -
-                  </div>
-                </div>
-
-                <input
-                  type="number"
-                  id="face-gap-upper-bound"
-                  name="face-gap-upper-bound"
-                  class="c-slider-input__input-upper"
-                  step="0.01"
-                  value="2"
-                >
-              </div>
-            </div>
-          </fieldset>
-
-          <fieldset class="c-form__fieldset">
-            <legend class="c-form__fieldset-legend">
               Sticker Colors
             </legend>
 
@@ -293,6 +209,90 @@
               class="c-form__input-checkbox"
               checked
             >
+          </div>
+        </fieldset>
+
+        <fieldset class="c-form__fieldset">
+          <legend class="c-form__fieldset-legend">
+            Shape Configuration
+          </legend>
+
+          <div class="c-form__input-group">
+            <label for="scale">Scale:</label>
+
+            <div class="c-slider-input u-flex-1">
+              <input
+                type="number"
+                id="scale-lower-bound"
+                name="scale-lower-bound"
+                class="c-slider-input__input-lower"
+                step="0.01"
+                value="0"
+              >
+
+              <div class="c-slider-input__input-range-container">
+                <input
+                  type="range"
+                  id="scale"
+                  name="scale"
+                  class="c-slider-input__input-range"
+                  step="0.01"
+                  value="0.5"
+                >
+
+                <div class="c-slider-input__input-range-value">
+                  -
+                </div>
+              </div>
+
+              <input
+                type="number"
+                id="scale-upper-bound"
+                name="scale-upper-bound"
+                class="c-slider-input__input-upper"
+                step="0.01"
+                value="1"
+              >
+            </div>
+          </div>
+
+          <div class="c-form__input-group">
+            <label for="face-gap">Face Gap:</label>
+
+            <div class="c-slider-input u-flex-1">
+              <input
+                type="number"
+                id="face-gap-lower-bound"
+                name="face-gap-lower-bound"
+                class="c-slider-input__input-lower"
+                step="0.01"
+                value="-2"
+              >
+
+              <div class="c-slider-input__input-range-container">
+                <input
+                  type="range"
+                  id="face-gap"
+                  name="face-gap"
+                  class="c-slider-input__input-range"
+                  step="0.01"
+                  value="0"
+                >
+
+                <div class="c-slider-input__input-range-value">
+                  -
+                </div>
+              </div>
+
+              <input
+                type="number"
+                id="face-gap-upper-bound"
+                name="face-gap-upper-bound"
+                class="c-slider-input__input-upper"
+                step="0.01"
+                value="2"
+              >
+            </div>
           </div>
         </fieldset>
 
@@ -468,8 +468,8 @@
                 id="camera-distance-lower-bound"
                 name="camera-distance-lower-bound"
                 class="c-slider-input__input-lower"
-                step="1"
-                value="-20"
+                step="0.01"
+                value="-10"
               >
 
               <div class="c-slider-input__input-range-container">
@@ -478,9 +478,9 @@
                   id="camera-distance"
                   name="camera-distance"
                   class="c-slider-input__input-range"
-                  step="1"
-                  min="-20"
-                  value="-8"
+                  step="0.01"
+                  min="-10"
+                  value="-4"
                 >
 
                 <div class="c-slider-input__input-range-value">
@@ -493,8 +493,8 @@
                 id="camera-distance-upper-bound"
                 name="camera-distance-upper-bound"
                 class="c-slider-input__input-upper"
-                step="1"
-                value="20"
+                step="0.01"
+                value="10"
               >
             </div>
           </div>
@@ -514,8 +514,8 @@
                 id="camera-look-at-x-lower-bound"
                 name="camera-look-at-x-lower-bound"
                 class="c-slider-input__input-lower"
-                step="1"
-                value="-100"
+                step="0.01"
+                value="-10"
               >
 
               <div class="c-slider-input__input-range-container">
@@ -524,7 +524,7 @@
                   id="camera-look-at-x"
                   name="camera-look-at-x"
                   class="c-slider-input__input-range"
-                  step="1"
+                  step="0.01"
                   value="0"
                 >
 
@@ -538,8 +538,8 @@
                 id="camera-look-at-x-upper-bound"
                 name="camera-look-at-x-upper-bound"
                 class="c-slider-input__input-upper"
-                step="1"
-                value="100"
+                step="0.01"
+                value="10"
               >
             </div>
           </div>
@@ -553,8 +553,8 @@
                 id="camera-look-at-y-lower-bound"
                 name="camera-look-at-y-lower-bound"
                 class="c-slider-input__input-lower"
-                step="1"
-                value="-100"
+                step="0.01"
+                value="-10"
               >
 
               <div class="c-slider-input__input-range-container">
@@ -563,7 +563,7 @@
                   id="camera-look-at-y"
                   name="camera-look-at-y"
                   class="c-slider-input__input-range"
-                  step="1"
+                  step="0.01"
                   value="0"
                 >
 
@@ -577,8 +577,8 @@
                 id="camera-look-at-y-upper-bound"
                 name="camera-look-at-y-upper-bound"
                 class="c-slider-input__input-upper"
-                step="1"
-                value="100"
+                step="0.01"
+                value="10"
               >
             </div>
           </div>
@@ -592,8 +592,8 @@
                 id="camera-look-at-z-lower-bound"
                 name="camera-look-at-z-lower-bound"
                 class="c-slider-input__input-lower"
-                step="1"
-                value="-100"
+                step="0.01"
+                value="-10"
               >
 
               <div class="c-slider-input__input-range-container">
@@ -602,7 +602,7 @@
                   id="camera-look-at-z"
                   name="camera-look-at-z"
                   class="c-slider-input__input-range"
-                  step="1"
+                  step="0.01"
                   value="0"
                 >
 
@@ -616,8 +616,8 @@
                 id="camera-look-at-z-upper-bound"
                 name="camera-look-at-z-upper-bound"
                 class="c-slider-input__input-upper"
-                step="1"
-                value="100"
+                step="0.01"
+                value="10"
               >
             </div>
           </div>
@@ -760,8 +760,8 @@
                 id="field-of-view-lower-bound"
                 name="field-of-view-lower-bound"
                 class="c-slider-input__input-lower"
-                step="1"
-                value="-180"
+                step="0.01"
+                value="-3"
               >
 
               <div class="c-slider-input__input-range-container">
@@ -770,10 +770,10 @@
                   id="field-of-view"
                   name="field-of-view"
                   class="c-slider-input__input-range"
-                  min="-180"
-                  max="180"
-                  step="1"
-                  value="45"
+                  min="-3"
+                  max="3"
+                  step="0.01"
+                  value="0.5"
                 >
 
                 <div class="c-slider-input__input-range-value">
@@ -786,8 +786,8 @@
                 id="field-of-view-upper-bound"
                 name="field-of-view-upper-bound"
                 class="c-slider-input__input-upper"
-                step="1"
-                value="180"
+                step="0.01"
+                value="3"
               >
             </div>
           </div>
@@ -801,7 +801,7 @@
                 id="near-plane-lower-bound"
                 name="near-plane-lower-bound"
                 class="c-slider-input__input-lower"
-                step="0.1"
+                step="0.01"
                 value="1"
               >
 
@@ -811,8 +811,8 @@
                   id="near-plane"
                   name="near-plane"
                   class="c-slider-input__input-range"
-                  step="0.1"
-                  value="0.1"
+                  step="0.01"
+                  value="0.01"
                 >
 
                 <div class="c-slider-input__input-range-value">
@@ -825,8 +825,8 @@
                 id="near-plane-upper-bound"
                 name="near-plane-upper-bound"
                 class="c-slider-input__input-upper"
-                step="0.1"
-                value="20"
+                step="0.01"
+                value="10"
               >
             </div>
           </div>
@@ -840,8 +840,8 @@
                 id="far-plane-lower-bound"
                 name="far-plane-lower-bound"
                 class="c-slider-input__input-lower"
-                step="1"
-                value="1"
+                step="0.01"
+                value="0"
               >
 
               <div class="c-slider-input__input-range-container">
@@ -850,8 +850,8 @@
                   id="far-plane"
                   name="far-plane"
                   class="c-slider-input__input-range"
-                  step="1"
-                  value="50"
+                  step="0.01"
+                  value="10"
                 >
 
                 <div class="c-slider-input__input-range-value">
@@ -864,8 +864,8 @@
                 id="far-plane-upper-bound"
                 name="far-plane-upper-bound"
                 class="c-slider-input__input-upper"
-                step="1"
-                value="100"
+                step="0.01"
+                value="10"
               >
             </div>
           </div>
@@ -1080,9 +1080,21 @@
   </main> 
 </body>
 
-<template id="controller-template">
-  <li class="c-controller-container__controller">
-    <button class="c-controller-container__controller-button">D</button>
-  </li>
+<template id="c-form__input-color-group-template">
+  <div
+    class="c-form__input-group"
+    style="--grid-template-columns: 1fr 2fr;"
+  >
+    <label for="sticker-color-up">Up:</label>
+
+    <input
+      type="color"
+      id="sticker-color-up"
+      name="sticker-color-up"
+      class="c-form__input-color"
+      value="#ffffff"
+    >
+  </div>
 </template>
+
 </html>

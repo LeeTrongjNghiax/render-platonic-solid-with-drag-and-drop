@@ -9,8 +9,13 @@ out vec4 v_color;
 uniform mat4 u_model;
 uniform mat4 u_view;
 uniform mat4 u_projection;
+uniform lowp float u_pointSize; 
+uniform float u_scale;
+uniform float u_faceGap;
 
 void main() {
-  gl_Position = u_projection * u_view * u_model * vec4(a_position, 1.0);
+  gl_PointSize = u_pointSize;
+  gl_Position = u_projection * u_view * u_model * vec4(a_position * u_scale, 1.0);
+
   v_color = a_color;
 }
