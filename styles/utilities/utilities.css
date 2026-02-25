@@ -1,0 +1,13 @@
+@layer utilities {
+  .u-flex-1 {
+    flex: 1;
+  }
+
+  .u-hidden {
+    display: none;
+  }
+
+  .u-overflow-hidden {
+    overflow: hidden;
+  }
+}
