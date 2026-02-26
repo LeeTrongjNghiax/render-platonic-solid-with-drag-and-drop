@@ -1,6 +1,7 @@
 import GOLDEN_RATIO from "../constants/golden-ratio.constant.js";
 import INVERSE_GOLDEN_RATIO from "../constants/inverse-golden-ratio.constant.js";
 import hexToUnitArray from "../utilities/hex-to-unit-array.js";
+import getNormalizedNormalVectorFromThreeVertices from "../utilities/get-normalized-normal-vector-from-three-vertices.js";
 
 const createRegularDodecahedron = ({
   scale = 1,
@@ -516,39 +517,15 @@ const createRegularDodecahedron = ({
   const vertices = [];
 
   faces.forEach(face => {
-    const vertexA = face.vertices[0];
-    const vertexB = face.vertices[1];
-    const vertexC = face.vertices[2];
-
-    const vectorA = {
-      x: vertexB.position.x - vertexA.position.x,
-      y: vertexB.position.y - vertexA.position.y,
-      z: vertexB.position.z - vertexA.position.z,
-    }
-
-    const vectorB = {
-      x: vertexC.position.x - vertexA.position.x,
-      y: vertexC.position.y - vertexA.position.y,
-      z: vertexC.position.z - vertexA.position.z,
-    }
-
-    const normal = {
-      x: vectorB.y * vectorA.z - vectorB.z * vectorA.y,
-      y: vectorB.z * vectorA.x - vectorB.x * vectorA.z,
-      z: vectorB.x * vectorA.y - vectorB.y * vectorA.x,
-    }
-
-    const normalizedNormal = {
-      x: (normal.x / Math.sqrt(normal.x * normal.x + normal.y * normal.y + normal.z * normal.z)),
-      y: (normal.y / Math.sqrt(normal.x * normal.x + normal.y * normal.y + normal.z * normal.z)),
-      z: (normal.z / Math.sqrt(normal.x * normal.x + normal.y * normal.y + normal.z * normal.z)),
-    };
-
-    face.normal = normalizedNormal;
+    face.normal = getNormalizedNormalVectorFromThreeVertices({
+      vertexA: face.vertices[0].position,
+      vertexB: face.vertices[1].position,
+      vertexC: face.vertices[2].position,
+    });
 
     face.vertices.forEach(vertex => {
       vertices.push(vertex.position.x, vertex.position.y, vertex.position.z);
-      vertices.push(normalizedNormal.x, normalizedNormal.y, normalizedNormal.z);
+      vertices.push(face.normal.x, face.normal.y, face.normal.z);
       vertices.push(...hexToUnitArray(face.color));
     });
   });

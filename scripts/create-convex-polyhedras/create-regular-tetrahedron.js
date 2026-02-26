@@ -1,12 +1,13 @@
 import hexToUnitArray from "../utilities/hex-to-unit-array.js";
+import getNormalizedNormalVectorFromThreeVertices from "../utilities/get-normalized-normal-vector-from-three-vertices.js";
 
 const createRegularTetrahedron = ({
   scale = 1,
   colors = {
     'down-front-right': 0xffff00ff, // Yellow
     'down-back-left': 0x0000ffff, // Blue
-    'top-front-left': 0xff0000ff, // Red
-    'top-back-right': 0x32cd32ff, // Lime Green
+    'up-front-left': 0xff0000ff, // Red
+    'up-back-right': 0x32cd32ff, // Lime Green
   }
 }) => {
   const faces = [
@@ -65,7 +66,7 @@ const createRegularTetrahedron = ({
     },
 
     {
-      color: colors['top-front-left'],
+      color: colors['up-front-left'],
       vertices: [
         {
           position: {
@@ -92,7 +93,7 @@ const createRegularTetrahedron = ({
     },
 
     {
-      color: colors['top-back-right'],
+      color: colors['up-back-right'],
       vertices: [
         {
           position: {
@@ -122,39 +123,15 @@ const createRegularTetrahedron = ({
   const vertices = [];
 
   faces.forEach(face => {
-    const vertexA = face.vertices[0];
-    const vertexB = face.vertices[1];
-    const vertexC = face.vertices[2];
-
-    const vectorA = {
-      x: vertexB.position.x - vertexA.position.x,
-      y: vertexB.position.y - vertexA.position.y,
-      z: vertexB.position.z - vertexA.position.z,
-    }
-
-    const vectorB = {
-      x: vertexC.position.x - vertexA.position.x,
-      y: vertexC.position.y - vertexA.position.y,
-      z: vertexC.position.z - vertexA.position.z,
-    }
-
-    const normal = {
-      x: vectorA.y * vectorB.z - vectorA.z * vectorB.y,
-      y: vectorA.z * vectorB.x - vectorA.x * vectorB.z,
-      z: vectorA.x * vectorB.y - vectorA.y * vectorB.x,
-    }
-
-    const normalizedNormal = {
-      x: (normal.x / Math.sqrt(normal.x * normal.x + normal.y * normal.y + normal.z * normal.z)),
-      y: (normal.y / Math.sqrt(normal.x * normal.x + normal.y * normal.y + normal.z * normal.z)),
-      z: (normal.z / Math.sqrt(normal.x * normal.x + normal.y * normal.y + normal.z * normal.z)),
-    };
-
-    face.normal = normalizedNormal;
+    face.normal = getNormalizedNormalVectorFromThreeVertices({
+      vertexA: face.vertices[0].position,
+      vertexB: face.vertices[1].position,
+      vertexC: face.vertices[2].position,
+    });
 
     face.vertices.forEach(vertex => {
       vertices.push(vertex.position.x, vertex.position.y, vertex.position.z);
-      vertices.push(normalizedNormal.x, normalizedNormal.y, normalizedNormal.z);
+      vertices.push(face.normal.x, face.normal.y, face.normal.z);
       vertices.push(...hexToUnitArray(face.color));
     });
   });
