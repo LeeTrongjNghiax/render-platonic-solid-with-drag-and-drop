@@ -4,6 +4,7 @@ import createRegularHexahedron from "../../../scripts/create-convex-polyhedras/c
 import createRegularOctahedron from "../../../scripts/create-convex-polyhedras/create-regular-octahedron.js";
 import createRegularDodecahedron from "../../../scripts/create-convex-polyhedras/create-regular-dodecahedron.js";
 import createRegularIcosahedron from "../../../scripts/create-convex-polyhedras/create-regular-icosahedron.js";
+import createRhombicDodecahedron from "../../../scripts/create-convex-polyhedras/create-rhombic-dodecahedron.js";
 import identity from "../../../scripts/maths/identity.js";
 import rotate from "../../../scripts/maths/rotate.js";
 import multiply from "../../../scripts/maths/multiply.js";
@@ -37,10 +38,10 @@ const createPlatonicSolid = async () => {
 
   gl.canvas.width = width;
   gl.canvas.height = height;
-  
+
   gl.enable(gl.BLEND);
   gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
-  
+
   gl.enable(gl.DEPTH_TEST);
   gl.depthFunc(gl.LEQUAL);
 
@@ -123,6 +124,9 @@ const createPlatonicSolid = async () => {
       break;
     case `regular-icosahedron`:
       object = createRegularIcosahedron({});
+      break;
+    case `rhombic-dodecahedron`:
+      object = createRhombicDodecahedron({});
       break;
   }
 
@@ -249,7 +253,7 @@ const createPlatonicSolid = async () => {
     aspectRatio: width / height,
     nearPlane: +nearPlane.value,
     farPlane: +farPlane.value,
-    
+
     radius: +cameraDistance.value,
     theta: +cameraPolarAngle.value,
     phi: +cameraAzimuthalAngle.value,
@@ -279,7 +283,7 @@ const createPlatonicSolid = async () => {
   const axisXVector = new Float32Array([1, 0, 0]);
   const axisYVector = new Float32Array([0, 1, 0]);
   const axisZVector = new Float32Array([0, 0, 1]);
-    
+
   let orientationXAngle = 0;
   let orientationYAngle = 0;
   let orientationZAngle = 0;
@@ -337,7 +341,7 @@ const createPlatonicSolid = async () => {
     updateCameraPosition();
 
     lookAt(
-      viewMatrix, 
+      viewMatrix,
       new Float32Array([
         camera.position.x,
         camera.position.y,
@@ -420,7 +424,7 @@ const createPlatonicSolid = async () => {
     }
 
     deltaTime = timestamp - lastTime;
-    
+
     lastTime = timestamp;
 
     angle = 0.001 * deltaTime;
@@ -540,7 +544,7 @@ const createPlatonicSolid = async () => {
 
     updateCamera();
   });
-  
+
   cameraUpY.addEventListener(`input`, (event) => {
     camera.up.y = +event.target.value;
 
@@ -600,7 +604,7 @@ const initiateForm = () => {
     0,
     platonicSolidType.options.length - 1
   );
-  // const randomPlatonicSolidTypeIndex = 0;
+  // const randomPlatonicSolidTypeIndex = platonicSolidType.options.length - 1;
 
   platonicSolidType.value = platonicSolidType.options[randomPlatonicSolidTypeIndex].value;
 
@@ -627,7 +631,7 @@ const initiateForm = () => {
       createPlatonicSolid();
     });
   }
-  
+
   isAutoUpdate.addEventListener(`change`, (event) => {
     if (event.target.checked) {
       form.addEventListener(`input`, () => {
@@ -695,7 +699,7 @@ const initiateForm = () => {
     rotateYSpeed = 0;
     rotateZSpeed = 0;
   }
-  
+
   isAutoRotate.addEventListener(`change`, (event) => {
     if (isAutoRotate.checked) {
       rotateXSpeed = +autoRotateXSpeed.value;
