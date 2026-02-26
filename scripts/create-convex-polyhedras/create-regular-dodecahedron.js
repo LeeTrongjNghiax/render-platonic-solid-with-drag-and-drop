@@ -26,37 +26,37 @@ const createRegularDodecahedron = ({
       vertices: [
         {
           position: {
-            x: scale *  0,
-            y: scale *  INVERSE_GOLDEN_RATIO,
-            z: scale * -GOLDEN_RATIO,
+            x:  0,
+            y:  scale * INVERSE_GOLDEN_RATIO,
+            z: -scale * GOLDEN_RATIO,
           },
         },
         {
           position: {
-            x: scale *  1,
-            y: scale *  1,
-            z: scale * -1,
+            x:  scale,
+            y:  scale,
+            z: -scale,
           },
         },
         {
           position: {
-            x: scale *  INVERSE_GOLDEN_RATIO,
-            y: scale *  GOLDEN_RATIO,
-            z: scale *  0,
+            x:  scale * INVERSE_GOLDEN_RATIO,
+            y:  scale * GOLDEN_RATIO,
+            z:  0,
           },
         },
         {
           position: {
-            x: scale * -INVERSE_GOLDEN_RATIO,
-            y: scale *  GOLDEN_RATIO,
-            z: scale *  0,
+            x: -scale * INVERSE_GOLDEN_RATIO,
+            y:  scale * GOLDEN_RATIO,
+            z:  0,
           },
         },
         {
           position: {
-            x: scale * -1,
-            y: scale *  1,
-            z: scale * -1,
+            x: -scale,
+            y:  scale,
+            z: -scale,
           },
         },
       ]
@@ -67,37 +67,37 @@ const createRegularDodecahedron = ({
       vertices: [
         {
           position: {
-            x: scale *  0,
-            y: scale *  INVERSE_GOLDEN_RATIO,
-            z: scale *  GOLDEN_RATIO,
+            x:  0,
+            y:  scale * INVERSE_GOLDEN_RATIO,
+            z:  scale * GOLDEN_RATIO,
           },
         },
         {
           position: {
-            x: scale * -1,
-            y: scale *  1,
-            z: scale *  1,
+            x: -scale,
+            y:  scale,
+            z:  scale,
           },
         },
         {
           position: {
-            x: scale * -INVERSE_GOLDEN_RATIO,
-            y: scale *  GOLDEN_RATIO,
-            z: scale *  0,
+            x: -scale * INVERSE_GOLDEN_RATIO,
+            y:  scale * GOLDEN_RATIO,
+            z:  0,
           },
         },
         {
           position: {
-            x: scale *  INVERSE_GOLDEN_RATIO,
-            y: scale *  GOLDEN_RATIO,
-            z: scale *  0,
+            x:  scale * INVERSE_GOLDEN_RATIO,
+            y:  scale * GOLDEN_RATIO,
+            z:  0,
           },
         },
         {
           position: {
-            x: scale *  1,
-            y: scale *  1,
-            z: scale *  1,
+            x:  scale,
+            y:  scale,
+            z:  scale,
           },
         },
       ]
@@ -108,37 +108,37 @@ const createRegularDodecahedron = ({
       vertices: [
         {
           position: {
-            x: scale *  INVERSE_GOLDEN_RATIO,
-            y: scale *  GOLDEN_RATIO,
-            z: scale *  0,
+            x:  scale * INVERSE_GOLDEN_RATIO,
+            y:  scale * GOLDEN_RATIO,
+            z:  0,
           },
         },
         {
           position: {
-            x: scale *  1,
-            y: scale *  1,
-            z: scale * -1,
+            x:  scale,
+            y:  scale,
+            z: -scale,
           },
         },
         {
           position: {
-            x: scale *  GOLDEN_RATIO,
-            y: scale *  0,
-            z: scale * -INVERSE_GOLDEN_RATIO,
+            x:  scale * GOLDEN_RATIO,
+            y:  0,
+            z: -scale * INVERSE_GOLDEN_RATIO,
           },
         },
         {
           position: {
-            x: scale *  GOLDEN_RATIO,
-            y: scale *  0,
-            z: scale *  INVERSE_GOLDEN_RATIO,
+            x:  scale * GOLDEN_RATIO,
+            y:  0,
+            z:  scale * INVERSE_GOLDEN_RATIO,
           },
         },
         {
           position: {
-            x: scale *  1,
-            y: scale *  1,
-            z: scale *  1,
+            x:  scale,
+            y:  scale,
+            z:  scale,
           },
         },
       ]
@@ -149,37 +149,37 @@ const createRegularDodecahedron = ({
       vertices: [
         {
           position: {
-            x: scale * -INVERSE_GOLDEN_RATIO,
-            y: scale *  GOLDEN_RATIO,
-            z: scale *  0,
+            x: -scale * INVERSE_GOLDEN_RATIO,
+            y:  scale * GOLDEN_RATIO,
+            z:  0,
           },
         },
         {
           position: {
-            x: scale * -1,
-            y: scale *  1,
-            z: scale *  1,
+            x: -scale,
+            y:  scale,
+            z:  scale,
           },
         },
         {
           position: {
-            x: scale * -GOLDEN_RATIO,
-            y: scale *  0,
-            z: scale *  INVERSE_GOLDEN_RATIO,
+            x: -scale * GOLDEN_RATIO,
+            y:  0,
+            z:  scale * INVERSE_GOLDEN_RATIO,
           },
         },
         {
           position: {
-            x: scale * -GOLDEN_RATIO,
-            y: scale *  0,
-            z: scale * -INVERSE_GOLDEN_RATIO,
+            x: -scale * GOLDEN_RATIO,
+            y:  0,
+            z: -scale * INVERSE_GOLDEN_RATIO,
           },
         },
         {
           position: {
-            x: scale * -1,
-            y: scale *  1,
-            z: scale * -1,
+            x: -scale,
+            y:  scale,
+            z: -scale,
           },
         },
       ]
@@ -190,37 +190,37 @@ const createRegularDodecahedron = ({
       vertices: [
         {
           position: {
-            x: scale *  0,
-            y: scale * -INVERSE_GOLDEN_RATIO,
-            z: scale * -GOLDEN_RATIO,
+            x:  0,
+            y: -scale * INVERSE_GOLDEN_RATIO,
+            z: -scale * GOLDEN_RATIO,
           },
         },
         {
           position: {
-            x: scale * -1,
-            y: scale * -1,
-            z: scale * -1,
+            x: -scale,
+            y: -scale,
+            z: -scale,
           },
         },
         {
           position: {
-            x: scale * -INVERSE_GOLDEN_RATIO,
-            y: scale * -GOLDEN_RATIO,
-            z: scale *  0,
+            x: -scale * INVERSE_GOLDEN_RATIO,
+            y: -scale * GOLDEN_RATIO,
+            z:  0,
           },
         },
         {
           position: {
-            x: scale *  INVERSE_GOLDEN_RATIO,
-            y: scale * -GOLDEN_RATIO,
-            z: scale *  0,
+            x:  scale * INVERSE_GOLDEN_RATIO,
+            y: -scale * GOLDEN_RATIO,
+            z:  0,
           },
         },
         {
           position: {
-            x: scale *  1,
-            y: scale * -1,
-            z: scale * -1,
+            x:  scale,
+            y: -scale,
+            z: -scale,
           },
         },
       ]
@@ -231,37 +231,37 @@ const createRegularDodecahedron = ({
       vertices: [
         {
           position: {
-            x: scale *  0,
-            y: scale * -INVERSE_GOLDEN_RATIO,
-            z: scale *  GOLDEN_RATIO,
+            x:  0,
+            y: -scale * INVERSE_GOLDEN_RATIO,
+            z:  scale * GOLDEN_RATIO,
           },
         },
         {
           position: {
-            x: scale *  1,
-            y: scale * -1,
-            z: scale *  1,
+            x:  scale,
+            y: -scale,
+            z:  scale,
           },
         },
         {
           position: {
-            x: scale *  INVERSE_GOLDEN_RATIO,
-            y: scale * -GOLDEN_RATIO,
-            z: scale *  0,
+            x:  scale * INVERSE_GOLDEN_RATIO,
+            y: -scale * GOLDEN_RATIO,
+            z:  0,
           },
         },
         {
           position: {
-            x: scale * -INVERSE_GOLDEN_RATIO,
-            y: scale * -GOLDEN_RATIO,
-            z: scale *  0,
+            x: -scale * INVERSE_GOLDEN_RATIO,
+            y: -scale * GOLDEN_RATIO,
+            z:  0,
           },
         },
         {
           position: {
-            x: scale * -1,
-            y: scale * -1,
-            z: scale *  1,
+            x: -scale,
+            y: -scale,
+            z:  scale,
           },
         },
       ]
@@ -272,37 +272,37 @@ const createRegularDodecahedron = ({
       vertices: [
         {
           position: {
-            x: scale *  INVERSE_GOLDEN_RATIO,
-            y: scale * -GOLDEN_RATIO,
-            z: scale *  0,
+            x:  scale * INVERSE_GOLDEN_RATIO,
+            y: -scale * GOLDEN_RATIO,
+            z:  0,
           },
         },
         {
           position: {
-            x: scale *  1,
-            y: scale * -1,
-            z: scale *  1,
+            x:  scale,
+            y: -scale,
+            z:  scale,
           },
         },
         {
           position: {
-            x: scale *  GOLDEN_RATIO,
-            y: scale *  0,
-            z: scale *  INVERSE_GOLDEN_RATIO,
+            x:  scale * GOLDEN_RATIO,
+            y:  0,
+            z:  scale * INVERSE_GOLDEN_RATIO,
           },
         },
         {
           position: {
-            x: scale *  GOLDEN_RATIO,
-            y: scale *  0,
-            z: scale * -INVERSE_GOLDEN_RATIO,
+            x:  scale * GOLDEN_RATIO,
+            y:  0,
+            z: -scale * INVERSE_GOLDEN_RATIO,
           },
         },
         {
           position: {
-            x: scale *  1,
-            y: scale * -1,
-            z: scale * -1,
+            x:  scale,
+            y: -scale,
+            z: -scale,
           },
         },
       ]
@@ -313,37 +313,37 @@ const createRegularDodecahedron = ({
       vertices: [
         {
           position: {
-            x: scale * -INVERSE_GOLDEN_RATIO,
-            y: scale * -GOLDEN_RATIO,
-            z: scale *  0,
+            x: -scale * INVERSE_GOLDEN_RATIO,
+            y: -scale * GOLDEN_RATIO,
+            z:  0,
           },
         },
         {
           position: {
-            x: scale * -1,
-            y: scale * -1,
-            z: scale * -1,
+            x: -scale,
+            y: -scale,
+            z: -scale,
           },
         },
         {
           position: {
-            x: scale * -GOLDEN_RATIO,
-            y: scale *  0,
-            z: scale * -INVERSE_GOLDEN_RATIO,
+            x: -scale * GOLDEN_RATIO,
+            y:  0,
+            z: -scale * INVERSE_GOLDEN_RATIO,
           },
         },
         {
           position: {
-            x: scale * -GOLDEN_RATIO,
-            y: scale *  0,
-            z: scale *  INVERSE_GOLDEN_RATIO,
+            x: -scale * GOLDEN_RATIO,
+            y: 0,
+            z: scale * INVERSE_GOLDEN_RATIO,
           },
         },
         {
           position: {
-            x: scale * -1,
-            y: scale * -1,
-            z: scale *  1,
+            x: -scale,
+            y: -scale,
+            z:  scale,
           },
         },
       ]
@@ -354,37 +354,37 @@ const createRegularDodecahedron = ({
       vertices: [
         {
           position: {
-            x: scale *  GOLDEN_RATIO,
-            y: scale *  0,
-            z: scale * -INVERSE_GOLDEN_RATIO,
+            x:  scale * GOLDEN_RATIO,
+            y:  0,
+            z: -scale * INVERSE_GOLDEN_RATIO,
           },
         },
         {
           position: {
-            x: scale *  1,
-            y: scale *  1,
-            z: scale * -1,
+            x:  scale,
+            y:  scale,
+            z: -scale,
           },
         },
         {
           position: {
-            x: scale *  0,
-            y: scale *  INVERSE_GOLDEN_RATIO,
-            z: scale * -GOLDEN_RATIO,
+            x:  0,
+            y:  scale * INVERSE_GOLDEN_RATIO,
+            z: -scale * GOLDEN_RATIO,
           },
         },
         {
           position: {
-            x: scale *  0,
-            y: scale * -INVERSE_GOLDEN_RATIO,
-            z: scale * -GOLDEN_RATIO,
+            x:  0,
+            y: -scale * INVERSE_GOLDEN_RATIO,
+            z: -scale * GOLDEN_RATIO,
           },
         },
         {
           position: {
-            x: scale *  1,
-            y: scale * -1,
-            z: scale * -1,
+            x:  scale,
+            y: -scale,
+            z: -scale,
           },
         },
       ]
@@ -395,37 +395,37 @@ const createRegularDodecahedron = ({
       vertices: [
         {
           position: {
-            x: scale * -GOLDEN_RATIO,
-            y: scale *  0,
-            z: scale * -INVERSE_GOLDEN_RATIO,
+            x: -scale * GOLDEN_RATIO,
+            y:  0,
+            z: -scale * INVERSE_GOLDEN_RATIO,
           },
         },
         {
           position: {
-            x: scale * -1,
-            y: scale * -1,
-            z: scale * -1,
+            x: -scale,
+            y: -scale,
+            z: -scale,
           },
         },
         {
           position: {
-            x: scale *  0,
-            y: scale * -INVERSE_GOLDEN_RATIO,
-            z: scale * -GOLDEN_RATIO,
+            x:  0,
+            y: -scale * INVERSE_GOLDEN_RATIO,
+            z: -scale * GOLDEN_RATIO,
           },
         },
         {
           position: {
-            x: scale *  0,
-            y: scale *  INVERSE_GOLDEN_RATIO,
-            z: scale * -GOLDEN_RATIO,
+            x:  0,
+            y:  scale * INVERSE_GOLDEN_RATIO,
+            z: -scale * GOLDEN_RATIO,
           },
         },
         {
           position: {
-            x: scale * -1,
-            y: scale *  1,
-            z: scale * -1,
+            x: -scale,
+            y:  scale,
+            z: -scale,
           },
         },
       ]
@@ -436,37 +436,37 @@ const createRegularDodecahedron = ({
       vertices: [
         {
           position: {
-            x: scale *  GOLDEN_RATIO,
-            y: scale *  0,
-            z: scale *  INVERSE_GOLDEN_RATIO,
+            x:  scale * GOLDEN_RATIO,
+            y:  0,
+            z:  scale * INVERSE_GOLDEN_RATIO,
           },
         },
         {
           position: {
-            x: scale *  1,
-            y: scale * -1,
-            z: scale *  1,
+            x:  scale,
+            y: -scale,
+            z:  scale,
           },
         },
         {
           position: {
-            x: scale *  0,
-            y: scale * -INVERSE_GOLDEN_RATIO,
-            z: scale *  GOLDEN_RATIO,
+            x:  0,
+            y: -scale * INVERSE_GOLDEN_RATIO,
+            z:  scale * GOLDEN_RATIO,
           },
         },
         {
           position: {
-            x: scale *  0,
-            y: scale *  INVERSE_GOLDEN_RATIO,
-            z: scale *  GOLDEN_RATIO,
+            x:  0,
+            y:  scale * INVERSE_GOLDEN_RATIO,
+            z:  scale * GOLDEN_RATIO,
           },
         },
         {
           position: {
-            x: scale *  1,
-            y: scale *  1,
-            z: scale *  1,
+            x: scale,
+            y: scale,
+            z: scale,
           },
         },
       ]
@@ -477,37 +477,37 @@ const createRegularDodecahedron = ({
       vertices: [
         {
           position: {
-            x: scale * -GOLDEN_RATIO,
-            y: scale *  0,
-            z: scale *  INVERSE_GOLDEN_RATIO,
+            x: -scale * GOLDEN_RATIO,
+            y:  0,
+            z:  scale * INVERSE_GOLDEN_RATIO,
           },
         },
         {
           position: {
-            x: scale * -1,
-            y: scale *  1,
-            z: scale *  1,
+            x: -scale,
+            y:  scale,
+            z:  scale,
           },
         },
         {
           position: {
-            x: scale *  0,
-            y: scale *  INVERSE_GOLDEN_RATIO,
-            z: scale *  GOLDEN_RATIO,
+            x:  0,
+            y:  scale * INVERSE_GOLDEN_RATIO,
+            z:  scale * GOLDEN_RATIO,
           },
         },
         {
           position: {
-            x: scale *  0,
-            y: scale * -INVERSE_GOLDEN_RATIO,
-            z: scale *  GOLDEN_RATIO,
+            x:  0,
+            y: -scale * INVERSE_GOLDEN_RATIO,
+            z:  scale * GOLDEN_RATIO,
           },
         },
         {
           position: {
-            x: scale * -1,
-            y: scale * -1,
-            z: scale *  1,
+            x: -scale,
+            y: -scale,
+            z:  scale,
           },
         },
       ]

@@ -20,23 +20,23 @@ const createRegularOctahedron = ({
       vertices: [
         {
           position: {
-            x: 0,
-            y: scale,
-            z: 0,
+            x:  0,
+            y:  scale,
+            z:  0,
           },
         },
         {
           position: {
-            x: 0,
-            y: 0,
-            z: scale,
+            x:  0,
+            y:  0,
+            z:  scale,
           },
         },
         {
           position: {
-            x: scale,
-            y: 0,
-            z: 0,
+            x:  scale,
+            y:  0,
+            z:  0,
           },
         },
       ]
@@ -47,23 +47,23 @@ const createRegularOctahedron = ({
       vertices: [
         {
           position: {
-            x: 0,
-            y: scale,
-            z: 0,
+            x:  0,
+            y:  scale,
+            z:  0,
           },
         },
         {
           position: {
             x: -scale,
-            y: 0,
-            z: 0,
+            y:  0,
+            z:  0,
           },
         },
         {
           position: {
-            x: 0,
-            y: 0,
-            z: scale,
+            x:  0,
+            y:  0,
+            z:  scale,
           },
         },
       ]
@@ -74,22 +74,22 @@ const createRegularOctahedron = ({
       vertices: [
         {
           position: {
-            x: 0,
-            y: scale,
-            z: 0,
+            x:  0,
+            y:  scale,
+            z:  0,
           },
         },
         {
           position: {
-            x: scale,
-            y: 0,
-            z: 0,
+            x:  scale,
+            y:  0,
+            z:  0,
           },
         },
         {
           position: {
-            x: 0,
-            y: 0,
+            x:  0,
+            y:  0,
             z: -scale,
           },
         },
@@ -101,23 +101,23 @@ const createRegularOctahedron = ({
       vertices: [
         {
           position: {
-            x: 0,
-            y: scale,
-            z: 0,
+            x:  0,
+            y:  scale,
+            z:  0,
           },
         },
         {
           position: {
-            x: 0,
-            y: 0,
+            x:  0,
+            y:  0,
             z: -scale,
           },
         },
         {
           position: {
             x: -scale,
-            y: 0,
-            z: 0,
+            y:  0,
+            z:  0,
           },
         },
       ]
@@ -128,23 +128,23 @@ const createRegularOctahedron = ({
       vertices: [
         {
           position: {
-            x: 0,
+            x:  0,
             y: -scale,
-            z: 0,
+            z:  0,
           },
         },
         {
           position: {
-            x: scale,
-            y: 0,
-            z: 0,
+            x:  scale,
+            y:  0,
+            z:  0,
           },
         },
         {
           position: {
-            x: 0,
-            y: 0,
-            z: scale,
+            x:  0,
+            y:  0,
+            z:  scale,
           },
         },
       ]
@@ -155,23 +155,23 @@ const createRegularOctahedron = ({
       vertices: [
         {
           position: {
-            x: 0,
+            x:  0,
             y: -scale,
-            z: 0,
+            z:  0,
           },
         },
         {
           position: {
-            x: 0,
-            y: 0,
-            z: scale,
+            x:  0,
+            y:  0,
+            z:  scale,
           },
         },
         {
           position: {
             x: -scale,
-            y: 0,
-            z: 0,
+            y:  0,
+            z:  0,
           },
         },
       ]
@@ -182,23 +182,23 @@ const createRegularOctahedron = ({
       vertices: [
         {
           position: {
-            x: 0,
+            x:  0,
             y: -scale,
-            z: 0,
+            z:  0,
           },
         },
         {
           position: {
-            x: 0,
-            y: 0,
+            x:  0,
+            y:  0,
             z: -scale,
           },
         },
         {
           position: {
-            x: scale,
-            y: 0,
-            z: 0,
+            x:  scale,
+            y:  0,
+            z:  0,
           },
         },
       ]
@@ -209,22 +209,22 @@ const createRegularOctahedron = ({
       vertices: [
         {
           position: {
-            x: 0,
+            x:  0,
             y: -scale,
-            z: 0,
+            z:  0,
           },
         },
         {
           position: {
             x: -scale,
-            y: 0,
-            z: 0,
+            y:  0,
+            z:  0,
           },
         },
         {
           position: {
-            x: 0,
-            y: 0,
+            x:  0,
+            y:  0,
             z: -scale,
           },
         },
