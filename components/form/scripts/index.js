@@ -11,6 +11,10 @@ import multiply from "../../../scripts/maths/multiply.js";
 import lookAt from "../../../scripts/maths/look-at.js";
 import perspective from "../../../scripts/maths/perspective.js";
 import getRandomInteger from "../../../scripts/utilities/get-random-integer.js";
+import createRegularDodecahedron3 from "../../../scripts/create-convex-polyhedras/create-regular-dodecahedron-3.js";
+import createRegularHexahedron2 from "../../../scripts/create-convex-polyhedras/create-regular-hexahedron-2.js";
+import createRegularTetrahedron2 from "../../../scripts/create-convex-polyhedras/create-regular-tetrahedron-2.js";
+import createRegularIcosahedron2 from "../../../scripts/create-convex-polyhedras/create-regular-icosahedron-2.js";
 
 let modelUniformLocation;
 let viewUniformLocation;
@@ -111,19 +115,23 @@ const createPlatonicSolid = async () => {
 
   switch (platonicSolidType.value) {
     case `regular-tetrahedron`:
-      object = createRegularTetrahedron({});
+      // object = createRegularTetrahedron({});
+      object = createRegularTetrahedron2({});
       break;
     case `regular-hexahedron`: default:
-      object = createRegularHexahedron({});
+      // object = createRegularHexahedron({});
+      object = createRegularHexahedron2({});
       break;
     case `regular-octahedron`:
       object = createRegularOctahedron({});
       break;
     case `regular-dodecahedron`:
-      object = createRegularDodecahedron({});
+      // object = createRegularDodecahedron({});
+      object = createRegularDodecahedron3({});
       break;
     case `regular-icosahedron`:
-      object = createRegularIcosahedron({});
+      // object = createRegularIcosahedron({});
+      object = createRegularIcosahedron2({});
       break;
     case `rhombic-dodecahedron`:
       object = createRhombicDodecahedron({});
@@ -600,17 +608,17 @@ const initiateForm = () => {
 
   if (!platonicSolidType) throw new Error(`Platonic solid type is required`);
 
-  const randomPlatonicSolidTypeIndex = getRandomInteger(
-    0,
-    platonicSolidType.options.length - 1
-  );
-  // const randomPlatonicSolidTypeIndex = platonicSolidType.options.length - 1;
+  // const randomPlatonicSolidTypeIndex = getRandomInteger(
+  //   0,
+  //   platonicSolidType.options.length - 1
+  // );
+  const randomPlatonicSolidTypeIndex = 0;
 
   platonicSolidType.value = platonicSolidType.options[randomPlatonicSolidTypeIndex].value;
 
   platonicSolidType.dispatchEvent(new Event(`change`));
 
-  createPlatonicSolid();
+  // createPlatonicSolid();
 
   const isAutoUpdate = document.querySelector(`#is-auto-update`);
 
@@ -711,7 +719,6 @@ const initiateForm = () => {
       rotateZSpeed = 0;
     }
   });
-
 }
 
 document.addEventListener(`DOMContentLoaded`, initiateForm);
