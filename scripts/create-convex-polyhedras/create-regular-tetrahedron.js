@@ -17,7 +17,6 @@ const createRegularTetrahedron = ({
     maximumNumberOfFaces: 4,
     maximumNumberOfFacesShareTheSameVertex: 3,
     numberOfVerticesEachFace: [3],
-    faceIndicesShiftings: [0, 1, 2, 0, 2, 1],
     baseVertices: [
       {
         position: { x: 1, y: 1, z: 1 },

@@ -5,16 +5,15 @@ import hexToUnitArray from "../utilities/hex-to-unit-array.js";
 import toBase26 from "../utilities/to-base-26.js";
 import isTheSameVertex from "../maths/is-the-same-vertex.js";
 import checkIfAllVerticesAreOnTheSameSide from "../maths/check-if-all-vertices-are-on-the-same-side.js";
+import createRandomHexColor from "../utilities/create-random-hex-color.js";
 
 const createRegularSolid = ({
   scale = 1,
   colors = [],
-  defaultColor = 0xffffffff,
 
   maximumNumberOfFaces = 6,
   maximumNumberOfFacesShareTheSameVertex = 3,
   numberOfVerticesEachFace = [],
-  faceIndicesShiftings = [0, 1, 2, 0, 2, 1],
   baseVertices = [],
 }) => {
   const vertices = [];
@@ -127,6 +126,8 @@ const createRegularSolid = ({
 
         if (isFacesExist) continue;
 
+        // console.log('coplanarVertices', coplanarVertices, numberOfVerticesEachFace);
+
         if (!numberOfVerticesEachFace.includes(coplanarVertices.length))
           continue
 
@@ -155,7 +156,7 @@ const createRegularSolid = ({
 
         const addedFace = {
           normal,
-          color: colors[faces.length] ?? defaultColor,
+          color: colors[faces.length] ?? createRandomHexColor(),
           vertices: coplanarVertices,
         }
 
@@ -187,7 +188,21 @@ const createRegularSolid = ({
   const vertexIndexBuffersArray = [];
 
   for (let i = 0; i < faces.length; i++) {
-    const indices = faceIndicesShiftings.map(
+    let indicesShiftings = [];
+
+    switch (faces[i].vertices.length) {
+      case 3: default:
+        indicesShiftings = [0, 1, 2, 0, 2, 1];
+        break;
+      case 4:
+        indicesShiftings = [0, 1, 2, 0, 2, 1, 0, 1, 3, 0, 3, 1, 3, 1, 2, 3, 2, 1];
+        break;
+      case 4:
+        indicesShiftings = [0, 1, 2, 0, 2, 1, 0, 1, 3, 0, 3, 1, 0, 1, 4, 0, 4, 1];
+        break;
+    }
+
+    const indices = indicesShiftings.map(
       index => i * faces[i].vertices.length + index
     );
 

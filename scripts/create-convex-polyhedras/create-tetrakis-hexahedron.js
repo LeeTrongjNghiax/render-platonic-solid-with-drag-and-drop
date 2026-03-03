@@ -1,13 +1,13 @@
 import createRegularSolid from "./create-regular-solid.js";
 
-const createRhombicDodecahedron = ({ scale = 1, colors = [] }) => {
+const createTetrakisHexahedron = ({ scale = 1, colors = [] }) => {
   return createRegularSolid({
     scale,
     colors,
 
-    maximumNumberOfFaces: 12,
+    maximumNumberOfFaces: 24,
     maximumNumberOfFacesShareTheSameVertex: 4,
-    numberOfVerticesEachFace: [4],
+    numberOfVerticesEachFace: [3],
     baseVertices: [
       {
         position: { x: 1, y: 1, z: 1 },
@@ -15,7 +15,7 @@ const createRhombicDodecahedron = ({ scale = 1, colors = [] }) => {
         rotateCount: 0,
       },
       {
-        position: { x: 0, y: 0, z: 2 },
+        position: { x: 0, y: 0, z: 3 / 2 },
         signed: true,
         rotateCount: 2,
       },
@@ -23,4 +23,4 @@ const createRhombicDodecahedron = ({ scale = 1, colors = [] }) => {
   });
 }
 
-export default createRhombicDodecahedron;
+export default createTetrakisHexahedron;

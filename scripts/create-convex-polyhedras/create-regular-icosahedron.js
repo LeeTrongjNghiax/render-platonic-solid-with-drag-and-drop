@@ -34,7 +34,6 @@ const createRegularIcosahedron = ({
     maximumNumberOfFaces: 20,
     maximumNumberOfFacesShareTheSameVertex: 5,
     numberOfVerticesEachFace: [3],
-    faceIndicesShiftings: [0, 1, 2, 0, 2, 1],
     baseVertices: [
       {
         position: { x: 0, y: 1, z: GOLDEN_RATIO },

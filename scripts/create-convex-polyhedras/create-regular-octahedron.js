@@ -20,7 +20,6 @@ const createRegularOctahedron = ({
     maximumNumberOfFaces: 8,
     maximumNumberOfFacesShareTheSameVertex: 4,
     numberOfVerticesEachFace: [3],
-    faceIndicesShiftings: [0, 1, 2, 0, 2, 1],
     baseVertices: [
       {
         position: { x: 0, y: 0, z: 1 },

@@ -19,7 +19,6 @@ const createRegularHexahedron = ({
     maximumNumberOfFaces: 6,
     maximumNumberOfFacesShareTheSameVertex: 3,
     numberOfVerticesEachFace: [4],
-    faceIndicesShiftings: [0, 1, 2, 0, 2, 1, 3, 2, 1, 3, 1, 2],
     baseVertices: [
       {
         position: { x: 1, y: 1, z: 1 },

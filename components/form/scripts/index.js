@@ -6,6 +6,13 @@ import createRegularIcosahedron from "../../../scripts/create-convex-polyhedras/
 import createRegularDodecahedron3 from "../../../scripts/create-convex-polyhedras/create-regular-dodecahedron-3.js";
 import createRhombicDodecahedron from "../../../scripts/create-convex-polyhedras/create-rhombic-dodecahedron.js";
 import createTriakisOctahedron from "../../../scripts/create-convex-polyhedras/create-triakis-octahedron.js";
+import createTetrakisHexahedron from "../../../scripts/create-convex-polyhedras/create-tetrakis-hexahedron.js";
+import createRhombicuboctahedron from "../../../scripts/create-convex-polyhedras/create-rhombicuboctahedron.js";
+import createDisdyakisDodecahedron from "../../../scripts/create-convex-polyhedras/create-disdyakis-dodecahedron.js";
+import createRhombicTriacontahedron from "../../../scripts/create-convex-polyhedras/create-rhombic-triacontahedron.js";
+import createTriakisIcosahedron from "../../../scripts/create-convex-polyhedras/create-triakis-icosahedron.js";
+import createPentakisDodecahedron from "../../../scripts/create-convex-polyhedras/create-pentakis-dodecahedron.js";
+import createDisdyakisTriacontahedron from "../../../scripts/create-convex-polyhedras/create-disdyakis-triacontahedron.js";
 
 import getRandomInteger from "../../../scripts/utilities/get-random-integer.js";
 import readTextFile from "../../../scripts/utilities/read-text-file.js";
@@ -134,6 +141,27 @@ const createSolid = async () => {
       break;
     case `triakis-octahedron`:
       object = createTriakisOctahedron({});
+      break;
+    case `tetrakis-hexahedron`:
+      object = createTetrakisHexahedron({});
+      break;
+    case `rhombicuboctahedron`:
+      object = createRhombicuboctahedron({});
+      break;
+    case `disdyakis-dodecahedron`:
+      object = createDisdyakisDodecahedron({});
+      break;
+    case `rhombic-triacontahedron`:
+      object = createRhombicTriacontahedron({});
+      break;
+    case `triakis-icosahedron`:
+      object = createTriakisIcosahedron({});
+      break;
+    case `pentakis-dodecahedron`:
+      object = createPentakisDodecahedron({});
+      break;
+    case `disdyakis-triacontahedron`:
+      object = createDisdyakisTriacontahedron({});
       break;
   }
 

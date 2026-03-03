@@ -26,7 +26,6 @@ const createRegularDodecahedron3 = ({
     numberOfFaces: 12,
     maximumNumberOfFacesShareTheSameVertex: 3,
     numberOfVerticesEachFace: [5],
-    faceIndicesShiftings: [0, 1, 2, 0, 2, 1, 3, 1, 2, 3, 2, 1, 0, 1, 4, 0, 4, 1],
     baseVertices: [
       {
         position: { x: 1, y: 1, z: 1 },
