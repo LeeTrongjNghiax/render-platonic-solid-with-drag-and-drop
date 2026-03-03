@@ -7,10 +7,30 @@
 
   <link rel="stylesheet" href="./styles/index.css">
 
-  <script defer type="module" src="./scripts/create-convex-polyhedras/index.js"></script>
-  <script defer type="module" src="./components/slider-input/scripts/index.js"></script>
-  <script defer type="module" src="./components/form/scripts/index.js"></script>
-  <script defer type="module" src="./scripts/event-listeners/index.js"></script>
+  <script
+    defer
+    type="module"
+    src="./scripts/create-convex-polyhedras/index.js"
+  >
+  </script>
+  <script
+    defer
+    type="module"
+    src="./components/slider-input/scripts/index.js"
+  >
+  </script>
+  <script
+    defer
+    type="module"
+    src="./components/form/scripts/index.js"
+  >
+  </script>
+  <script
+    defer
+    type="module"
+    src="./scripts/event-listeners/index.js"
+  >
+  </script>
 </head>
 <body>
   <main class="c-main">
@@ -48,11 +68,11 @@
           --grid-template-columns\@1024: 1fr auto;
         "
       >
-        <label for="platonic-solid-type">Choose Solid</label>
+        <label for="solid-type">Choose Solid</label>
 
         <select
-          name="platonic-solid-type"
-          id="platonic-solid-type"
+          name="solid-type"
+          id="solid-type"
           class="c-form__input-select"
         >
           <option value="">None</option>
@@ -62,6 +82,7 @@
           <option value="regular-dodecahedron">Regular Dodecahedron</option>
           <option value="regular-icosahedron">Regular Icosahedron</option>
           <option value="rhombic-dodecahedron">Rhombic Dodecahedron</option>
+          <option value="triakis-octahedron">Triakis Octahedron</option>
         </select>
       </div>
 

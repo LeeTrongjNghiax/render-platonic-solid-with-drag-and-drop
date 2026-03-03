@@ -4,17 +4,20 @@ import createRegularHexahedron from "../../../scripts/create-convex-polyhedras/c
 import createRegularOctahedron from "../../../scripts/create-convex-polyhedras/create-regular-octahedron.js";
 import createRegularDodecahedron from "../../../scripts/create-convex-polyhedras/create-regular-dodecahedron.js";
 import createRegularIcosahedron from "../../../scripts/create-convex-polyhedras/create-regular-icosahedron.js";
+import getRandomInteger from "../../../scripts/utilities/get-random-integer.js";
 import createRhombicDodecahedron from "../../../scripts/create-convex-polyhedras/create-rhombic-dodecahedron.js";
 import identity from "../../../scripts/maths/identity.js";
 import rotate from "../../../scripts/maths/rotate.js";
 import multiply from "../../../scripts/maths/multiply.js";
 import lookAt from "../../../scripts/maths/look-at.js";
 import perspective from "../../../scripts/maths/perspective.js";
-import getRandomInteger from "../../../scripts/utilities/get-random-integer.js";
 import createRegularDodecahedron3 from "../../../scripts/create-convex-polyhedras/create-regular-dodecahedron-3.js";
 import createRegularHexahedron2 from "../../../scripts/create-convex-polyhedras/create-regular-hexahedron-2.js";
 import createRegularTetrahedron2 from "../../../scripts/create-convex-polyhedras/create-regular-tetrahedron-2.js";
 import createRegularIcosahedron2 from "../../../scripts/create-convex-polyhedras/create-regular-icosahedron-2.js";
+import createRegularOctahedron2 from "../../../scripts/create-convex-polyhedras/create-regular-octahedron-2.js";
+import createRhombicDodecahedron2 from "../../../scripts/create-convex-polyhedras/create-rhombic-dodecahedron-2.js";
+import createTriakisOctahedron from "../../../scripts/create-convex-polyhedras/create-triakis-octahedron.js";
 
 let modelUniformLocation;
 let viewUniformLocation;
@@ -28,7 +31,7 @@ let rotateXSpeed = 0;
 let rotateYSpeed = 0;
 let rotateZSpeed = 0;
 
-const createPlatonicSolid = async () => {
+const createSolid = async () => {
   const canvas = document.querySelector(`.c-main__canvas`);
 
   if (!canvas) throw new Error(`Canvas not found`);
@@ -109,11 +112,11 @@ const createPlatonicSolid = async () => {
 
   if (!faceGap) throw new Error(`Face gap not found`);
 
-  const platonicSolidType = document.querySelector(`#platonic-solid-type`);
+  const solidType = document.querySelector(`#solid-type`);
 
-  if (!platonicSolidType) throw new Error(`Platonic solid type is required`);
+  if (!solidType) throw new Error(`Solid type is required`);
 
-  switch (platonicSolidType.value) {
+  switch (solidType.value) {
     case `regular-tetrahedron`:
       // object = createRegularTetrahedron({});
       object = createRegularTetrahedron2({});
@@ -123,7 +126,8 @@ const createPlatonicSolid = async () => {
       object = createRegularHexahedron2({});
       break;
     case `regular-octahedron`:
-      object = createRegularOctahedron({});
+      // object = createRegularOctahedron({});
+      object = createRegularOctahedron2({});
       break;
     case `regular-dodecahedron`:
       // object = createRegularDodecahedron({});
@@ -134,7 +138,11 @@ const createPlatonicSolid = async () => {
       object = createRegularIcosahedron2({});
       break;
     case `rhombic-dodecahedron`:
-      object = createRhombicDodecahedron({});
+      // object = createRhombicDodecahedron({});
+      object = createRhombicDodecahedron2({});
+      break;
+    case `triakis-octahedron`:
+      object = createTriakisOctahedron({});
       break;
   }
 
@@ -584,9 +592,9 @@ const createPlatonicSolid = async () => {
   });
 }
 
-const handleCreatePlatonicSolid = (event) => {
+const handlecreateSolid = (event) => {
   event.preventDefault();
-  createPlatonicSolid();
+  createSolid();
 }
 
 const initiateForm = () => {
@@ -594,7 +602,7 @@ const initiateForm = () => {
 
   if (!form) throw new Error(`Form not found`);
 
-  form.addEventListener(`submit`, handleCreatePlatonicSolid);
+  form.addEventListener(`submit`, handlecreateSolid);
 
   const faceGap = document.querySelector(`#face-gap`);
 
@@ -604,57 +612,41 @@ const initiateForm = () => {
 
   if (!scale) throw new Error(`Scale not found`);
 
-  const platonicSolidType = document.querySelector(`#platonic-solid-type`);
+  const solidType = document.querySelector(`#solid-type`);
 
-  if (!platonicSolidType) throw new Error(`Platonic solid type is required`);
+  if (!solidType) throw new Error(`Solid type is required`);
 
-  // const randomPlatonicSolidTypeIndex = getRandomInteger(
+  // const randomsolidTypeIndex = getRandomInteger(
   //   0,
-  //   platonicSolidType.options.length - 1
+  //   solidType.options.length - 1
   // );
-  const randomPlatonicSolidTypeIndex = 0;
+  const randomsolidTypeIndex = 0;
 
-  platonicSolidType.value = platonicSolidType.options[randomPlatonicSolidTypeIndex].value;
+  solidType.value = solidType.options[randomsolidTypeIndex].value;
 
-  platonicSolidType.dispatchEvent(new Event(`change`));
+  solidType.dispatchEvent(new Event(`change`));
 
-  // createPlatonicSolid();
+  // createSolid();
 
   const isAutoUpdate = document.querySelector(`#is-auto-update`);
 
   if (!isAutoUpdate) throw new Error(`Is auto update not found`);
 
   if (isAutoUpdate.checked) {
-    form.addEventListener(`input`, () => {
-      createPlatonicSolid();
-    });
-    platonicSolidType.addEventListener(`change`, () => {
-      createPlatonicSolid();
-    });
+    form.addEventListener(`input`, createSolid);
+    solidType.addEventListener(`change`, createSolid);
   } else {
-    form.removeEventListener(`input`, () => {
-      createPlatonicSolid();
-    });
-    platonicSolidType.removeEventListener(`change`, () => {
-      createPlatonicSolid();
-    });
+    form.removeEventListener(`input`, createSolid);
+    solidType.removeEventListener(`change`, createSolid);
   }
 
   isAutoUpdate.addEventListener(`change`, (event) => {
     if (event.target.checked) {
-      form.addEventListener(`input`, () => {
-        createPlatonicSolid();
-      });
-      platonicSolidType.addEventListener(`change`, () => {
-        createPlatonicSolid();
-      });
+      form.addEventListener(`input`, createSolid);
+      solidType.addEventListener(`change`, createSolid);
     } else {
-      form.removeEventListener(`input`, () => {
-        createPlatonicSolid();
-      });
-      platonicSolidType.removeEventListener(`change`, () => {
-        createPlatonicSolid();
-      });
+      form.removeEventListener(`input`, createSolid);
+      solidType.removeEventListener(`change`, createSolid);
     }
   });
 
