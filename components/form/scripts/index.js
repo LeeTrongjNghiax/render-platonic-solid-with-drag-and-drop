@@ -1,23 +1,19 @@
-import readTextFile from "../../../scripts/utilities/read-text-file.js";
 import createRegularTetrahedron from "../../../scripts/create-convex-polyhedras/create-regular-tetrahedron.js";
 import createRegularHexahedron from "../../../scripts/create-convex-polyhedras/create-regular-hexahedron.js";
 import createRegularOctahedron from "../../../scripts/create-convex-polyhedras/create-regular-octahedron.js";
 import createRegularDodecahedron from "../../../scripts/create-convex-polyhedras/create-regular-dodecahedron.js";
 import createRegularIcosahedron from "../../../scripts/create-convex-polyhedras/create-regular-icosahedron.js";
-import getRandomInteger from "../../../scripts/utilities/get-random-integer.js";
+import createRegularDodecahedron3 from "../../../scripts/create-convex-polyhedras/create-regular-dodecahedron-3.js";
 import createRhombicDodecahedron from "../../../scripts/create-convex-polyhedras/create-rhombic-dodecahedron.js";
+import createTriakisOctahedron from "../../../scripts/create-convex-polyhedras/create-triakis-octahedron.js";
+
+import getRandomInteger from "../../../scripts/utilities/get-random-integer.js";
+import readTextFile from "../../../scripts/utilities/read-text-file.js";
 import identity from "../../../scripts/maths/identity.js";
 import rotate from "../../../scripts/maths/rotate.js";
 import multiply from "../../../scripts/maths/multiply.js";
 import lookAt from "../../../scripts/maths/look-at.js";
 import perspective from "../../../scripts/maths/perspective.js";
-import createRegularDodecahedron3 from "../../../scripts/create-convex-polyhedras/create-regular-dodecahedron-3.js";
-import createRegularHexahedron2 from "../../../scripts/create-convex-polyhedras/create-regular-hexahedron-2.js";
-import createRegularTetrahedron2 from "../../../scripts/create-convex-polyhedras/create-regular-tetrahedron-2.js";
-import createRegularIcosahedron2 from "../../../scripts/create-convex-polyhedras/create-regular-icosahedron-2.js";
-import createRegularOctahedron2 from "../../../scripts/create-convex-polyhedras/create-regular-octahedron-2.js";
-import createRhombicDodecahedron2 from "../../../scripts/create-convex-polyhedras/create-rhombic-dodecahedron-2.js";
-import createTriakisOctahedron from "../../../scripts/create-convex-polyhedras/create-triakis-octahedron.js";
 
 let modelUniformLocation;
 let viewUniformLocation;
@@ -118,28 +114,23 @@ const createSolid = async () => {
 
   switch (solidType.value) {
     case `regular-tetrahedron`:
-      // object = createRegularTetrahedron({});
-      object = createRegularTetrahedron2({});
+      object = createRegularTetrahedron({});
       break;
     case `regular-hexahedron`: default:
-      // object = createRegularHexahedron({});
-      object = createRegularHexahedron2({});
+      object = createRegularHexahedron({});
       break;
     case `regular-octahedron`:
-      // object = createRegularOctahedron({});
-      object = createRegularOctahedron2({});
+      object = createRegularOctahedron({});
       break;
     case `regular-dodecahedron`:
       // object = createRegularDodecahedron({});
       object = createRegularDodecahedron3({});
       break;
     case `regular-icosahedron`:
-      // object = createRegularIcosahedron({});
-      object = createRegularIcosahedron2({});
+      object = createRegularIcosahedron({});
       break;
     case `rhombic-dodecahedron`:
-      // object = createRhombicDodecahedron({});
-      object = createRhombicDodecahedron2({});
+      object = createRhombicDodecahedron({});
       break;
     case `triakis-octahedron`:
       object = createTriakisOctahedron({});
@@ -616,17 +607,17 @@ const initiateForm = () => {
 
   if (!solidType) throw new Error(`Solid type is required`);
 
-  // const randomsolidTypeIndex = getRandomInteger(
-  //   0,
-  //   solidType.options.length - 1
-  // );
-  const randomsolidTypeIndex = 0;
+  const randomsolidTypeIndex = getRandomInteger(
+    0,
+    solidType.options.length - 1
+  );
+  // const randomsolidTypeIndex = 0;
 
   solidType.value = solidType.options[randomsolidTypeIndex].value;
 
   solidType.dispatchEvent(new Event(`change`));
 
-  // createSolid();
+  createSolid();
 
   const isAutoUpdate = document.querySelector(`#is-auto-update`);
 

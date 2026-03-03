@@ -2,46 +2,14 @@ import getNormalizedNormalVectorFromThreeVertices from "../utilities/get-normali
 import roundTo from "../utilities/round-to.js";
 import dot from "../maths/dot.js";
 import hexToUnitArray from "../utilities/hex-to-unit-array.js";
-
-const isTheSameVertex = (vertexA, vertexB) => {
-  return vertexA.x === vertexB.x &&
-         vertexA.y === vertexB.y &&
-         vertexA.z === vertexB.z;
-}
-
-const debugVertices = (vertices) => {
-  console.log(`debug vertices`);
-
-  vertices.forEach(vertex => {
-    console.log(vertex.position);
-  });
-}
-
-const checkIfAllVerticesAreOnTheSameSide = (vertices, normal, d) => {
-  const isOnTheSameSide = vertices.every(vertex => {
-    const side = normal.x * vertex.position.x
-               + normal.y * vertex.position.y
-               + normal.z * vertex.position.z
-               + d;
-
-    return side >= 0;
-  });
-
-  const isOnTheOppositeSide = vertices.every(vertex => {
-    const side = normal.x * vertex.position.x
-               + normal.y * vertex.position.y
-               + normal.z * vertex.position.z
-               + d;
-
-    return side <= 0;
-  });
-
-  return isOnTheSameSide || isOnTheOppositeSide;
-}
+import toBase26 from "../utilities/to-base-26.js";
+import isTheSameVertex from "../maths/is-the-same-vertex.js";
+import checkIfAllVerticesAreOnTheSameSide from "../maths/check-if-all-vertices-are-on-the-same-side.js";
 
 const createRegularSolid = ({
   scale = 1,
   colors = [],
+  defaultColor = 0xffffffff,
 
   maximumNumberOfFaces = 6,
   maximumNumberOfFacesShareTheSameVertex = 3,
@@ -77,6 +45,7 @@ const createRegularSolid = ({
 
           for (let z of rangeZ) {
             vertices.push({
+              name: toBase26(vertices.length),
               position: { x: x * scale, y: y * scale, z: z * scale },
             });
           }
@@ -101,9 +70,9 @@ const createRegularSolid = ({
         if (i === j || j === k || k === i) continue;
 
         if (
-          vertexLinkCounts[i] > maximumNumberOfFacesShareTheSameVertex
-          || vertexLinkCounts[j] > maximumNumberOfFacesShareTheSameVertex
-          || vertexLinkCounts[k] > maximumNumberOfFacesShareTheSameVertex
+          vertexLinkCounts[i] > maximumNumberOfFacesShareTheSameVertex ||
+          vertexLinkCounts[j] > maximumNumberOfFacesShareTheSameVertex ||
+          vertexLinkCounts[k] > maximumNumberOfFacesShareTheSameVertex
         ) continue;
 
         const normal = getNormalizedNormalVectorFromThreeVertices({
@@ -114,50 +83,83 @@ const createRegularSolid = ({
 
         if (isNaN(normal.x) || isNaN(normal.y) || isNaN(normal.z)) continue;
 
+        const normalFacing = dot(
+          [normal.x, normal.y, normal.z],
+          [
+            vertices[i].position.x,
+            vertices[i].position.y,
+            vertices[i].position.z,
+          ],
+        );
+
+        if (normalFacing < 0) {
+          normal.x = -normal.x;
+          normal.y = -normal.y;
+          normal.z = -normal.z;
+        }
+
         const coplanarVertices = vertices.filter(vertex => {
           const newVertex = {
-            position: {
-              x: vertex.position.x - vertices[i].position.x,
-              y: vertex.position.y - vertices[i].position.y,
-              z: vertex.position.z - vertices[i].position.z,
-            }
+            x: vertex.position.x - vertices[i].position.x,
+            y: vertex.position.y - vertices[i].position.y,
+            z: vertex.position.z - vertices[i].position.z,
           }
 
-          return roundTo(dot([
-            normal.x,
-            normal.y,
-            normal.z,
-          ], [
-            newVertex.position.x,
-            newVertex.position.y,
-            newVertex.position.z,
-          ])) === 0;
+          return roundTo(dot(
+            [normal.x, normal.y, normal.z],
+            [newVertex.x, newVertex.y, newVertex.z]
+          )) === 0;
         });
 
-        if (numberOfVerticesEachFace.includes(coplanarVertices.length)) {
-          const d = -(normal.x * coplanarVertices[0].position.x
-                    + normal.y * coplanarVertices[0].position.y
-                    + normal.z * coplanarVertices[0].position.z);
+        const isFacesExist = faces.some(face => {
+          const areEqual =
+            face.vertices.length === coplanarVertices.length &&
+            face.vertices.every((obj, index) => {
+              const compare = coplanarVertices[index];
 
-          const otherVertices = vertices.filter(
-            vertex => !coplanarVertices.some(
-              coplanarVertex => isTheSameVertex(vertex.position, coplanarVertex.position)
-            )
-          );
-
-          if (checkIfAllVerticesAreOnTheSameSide(otherVertices, normal, d)) {
-            vertexLinkCounts[i]++;
-            vertexLinkCounts[j]++;
-            vertexLinkCounts[k]++;
-
-            faces.push({
-              normal,
-              color: colors[faces.length],
-              vertices: coplanarVertices,
+              return obj.position.x === compare.position.x &&
+                     obj.position.y === compare.position.y &&
+                     obj.position.z === compare.position.z
             });
-          } else {
-          }
+
+          return areEqual;
+        });
+
+        if (isFacesExist) continue;
+
+        if (!numberOfVerticesEachFace.includes(coplanarVertices.length))
+          continue
+
+        const d = -(normal.x * coplanarVertices[0].position.x
+                  + normal.y * coplanarVertices[0].position.y
+                  + normal.z * coplanarVertices[0].position.z);
+
+        const otherVertices = vertices.filter(
+          vertex => !coplanarVertices.some(
+            coplanarVertex => isTheSameVertex(
+              vertex.position,
+              coplanarVertex.position,
+            )
+          )
+        );
+
+        if (!checkIfAllVerticesAreOnTheSameSide({
+          vertices: otherVertices,
+          normal,
+          d,
+        })) continue;
+
+        vertexLinkCounts[i]++;
+        vertexLinkCounts[j]++;
+        vertexLinkCounts[k]++;
+
+        const addedFace = {
+          normal,
+          color: colors[faces.length] ?? defaultColor,
+          vertices: coplanarVertices,
         }
+
+        faces.push(addedFace);
 
         if (faces.length === maximumNumberOfFaces) break;
       }
