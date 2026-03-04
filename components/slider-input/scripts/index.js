@@ -1,20 +1,32 @@
-const clamp = (value, min, max) => {
-  if (min === max) return 0;
-
-  const n = (value - min) / (max - min);
-  return Math.min(1, Math.max(0, n));
-}
+import clamp from "../../../scripts/maths/clamp.js";
 
 const initiateSliderInput = () => {
   const sliderInputs = document.querySelectorAll(`.c-slider-input`);
 
   sliderInputs.forEach((sliderInput) => {
-    const lowerBoundInput = sliderInput.querySelector(`.c-slider-input__input-lower`);
+    const lowerBoundInput = sliderInput.querySelector(
+      `.c-slider-input__input-lower`
+    );
 
-    const upperBoundInput = sliderInput.querySelector(`.c-slider-input__input-upper`);
+    if (!lowerBoundInput) throw new Error(`Lower bound input not found`);
 
-    const rangeInput = sliderInput.querySelector(`.c-slider-input__input-range`);
-    const rangeValue = sliderInput.querySelector(`.c-slider-input__input-range-value`);
+    const upperBoundInput = sliderInput.querySelector(
+      `.c-slider-input__input-upper`
+    );
+
+    if (!upperBoundInput) throw new Error(`Upper bound input not found`);
+
+    const rangeInput = sliderInput.querySelector(
+      `.c-slider-input__input-range`
+    );
+
+    if (!rangeInput) throw new Error(`Range input not found`);
+
+    const rangeValue = sliderInput.querySelector(
+      `.c-slider-input__input-range-value`
+    );
+
+    if (!rangeValue) throw new Error(`Range value not found`);
 
     rangeInput.min = +lowerBoundInput.value;
 
@@ -30,22 +42,22 @@ const initiateSliderInput = () => {
 
     rangeValue.textContent = rangeInput.value;
 
-    const normalizedValue = clamp(
-      +rangeInput.value,
-      +lowerBoundInput.value,
-      +upperBoundInput.value
-    );
+    const normalizedValue = clamp({
+      value: +rangeInput.value,
+      min: +lowerBoundInput.value,
+      max: +upperBoundInput.value
+    });
 
     rangeValue.style.left = `${normalizedValue * 100}%`;
 
     rangeInput.addEventListener(`input`, () => {
       rangeValue.textContent = rangeInput.value;
 
-      const normalizedValue = clamp(
-        +rangeInput.value,
-        +lowerBoundInput.value,
-        +upperBoundInput.value
-      );
+      const normalizedValue = clamp({
+        value: +rangeInput.value,
+        min: +lowerBoundInput.value,
+        max: +upperBoundInput.value
+      });
 
       rangeValue.style.left = `${normalizedValue * 100}%`;
     });

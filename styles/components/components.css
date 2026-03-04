@@ -64,7 +64,7 @@
     cursor: pointer;
     color: var(--color-foreground);
     transition: color 0.3s ease;
-    
+
     width: 32px;
 
     @media (1024px <= width) {
@@ -199,7 +199,7 @@
       grid-template-columns: var(--grid-template-columns\@1024);
     }
   }
-  
+
   .c-sidebar--left {
     left: -100%;
   }
@@ -270,7 +270,7 @@
       font-size: 18px;
     }
   }
-  
+
   .c-slider-input__input-range {
     -webkit-appearance: none;
     appearance: none;
@@ -363,4 +363,31 @@
     cursor: pointer;
     user-select: none;
   }
+}
+
+.c-form__input-select-with-skip-buttons-container {
+  display: grid;
+  grid-template-columns: 40px auto 40px;
+  gap: 10px;
+}
+
+.c-form__input-select-previous-button,
+.c-form__input-select-next-button {
+    border: 1px solid var(--color-border);
+    font-family: var(--font-primary);
+    border-radius: 5px;
+    background-color: transparent;
+    padding: 5px 10px;
+    font-weight: 400;
+    color: var(--color-foreground);
+    text-align: center;
+    background-color: var(--color-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+
+    @media (1024px <= width) {
+      font-size: 18px;
+    }
 }
