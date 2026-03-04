@@ -9,6 +9,13 @@ const handleChangeSelectInput = (selectInput, direction = 1) => {
     else selectedIndex--;
   }
 
+  let isOptionDisabled = selectInput.options[selectedIndex].disabled;
+
+  while (isOptionDisabled) {
+    selectedIndex += direction;
+    isOptionDisabled = selectInput.options[selectedIndex].disabled;
+  }
+
   selectInput.value = selectInput.options[selectedIndex].value;
   selectInput.dispatchEvent(new Event(`change`));
 }

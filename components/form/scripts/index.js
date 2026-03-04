@@ -120,49 +120,39 @@ const createSolid = async () => {
   if (!solidType) throw new Error(`Solid type is required`);
 
   switch (solidType.value) {
-    case `regular-tetrahedron`:
-      object = createRegularTetrahedron({});
-      break;
+    // Platonic Solids
+    case `regular-tetrahedron`: object = createRegularTetrahedron({}); break;
     case `regular-hexahedron`: default:
       object = createRegularHexahedron({});
       break;
-    case `regular-octahedron`:
-      object = createRegularOctahedron({});
-      break;
-    case `regular-dodecahedron`:
-      // object = createRegularDodecahedron({});
-      object = createRegularDodecahedron3({});
-      break;
-    case `regular-icosahedron`:
-      object = createRegularIcosahedron({});
-      break;
-    case `rhombic-dodecahedron`:
-      object = createRhombicDodecahedron({});
-      break;
-    case `triakis-octahedron`:
-      object = createTriakisOctahedron({});
-      break;
-    case `tetrakis-hexahedron`:
-      object = createTetrakisHexahedron({});
-      break;
-    case `rhombicuboctahedron`:
-      object = createRhombicuboctahedron({});
-      break;
+    case `regular-octahedron`: object = createRegularOctahedron({}); break;
+    case `regular-dodecahedron`: object = createRegularDodecahedron3({}); break;
+    case `regular-icosahedron`: object = createRegularIcosahedron({}); break;
+
+    // Catalan Solids
+    // triakis tetrahedron
+    case `rhombic-dodecahedron`: object = createRhombicDodecahedron({}); break;
+    case `triakis-octahedron`: object = createTriakisOctahedron({}); break;
+    case `tetrakis-hexahedron`: object = createTetrakisHexahedron({}); break;
+    // deltoidal icositetrahedron
     case `disdyakis-dodecahedron`:
       object = createDisdyakisDodecahedron({});
       break;
+    // pentagonal icositetrahedron
     case `rhombic-triacontahedron`:
       object = createRhombicTriacontahedron({});
       break;
-    case `triakis-icosahedron`:
-      object = createTriakisIcosahedron({});
-      break;
+    case `triakis-icosahedron`: object = createTriakisIcosahedron({}); break;
     case `pentakis-dodecahedron`:
       object = createPentakisDodecahedron({});
       break;
+    // deltoidal hexecontahedron
     case `disdyakis-triacontahedron`:
       object = createDisdyakisTriacontahedron({});
       break;
+    // pentagonal hexecontahedron
+
+    case `rhombicuboctahedron`: object = createRhombicuboctahedron({}); break;
   }
 
   gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
@@ -635,11 +625,18 @@ const initiateForm = () => {
 
   if (!solidType) throw new Error(`Solid type is required`);
 
-  const randomsolidTypeIndex = getRandomInteger(
+  let randomsolidTypeIndex = getRandomInteger(
     0,
     solidType.options.length - 1
   );
-  // const randomsolidTypeIndex = 0;
+
+  while (solidType.options[randomsolidTypeIndex].disabled) {
+    randomsolidTypeIndex = getRandomInteger(
+      0,
+      solidType.options.length - 1
+    );
+  }
+  // let randomsolidTypeIndex = 0;
 
   solidType.value = solidType.options[randomsolidTypeIndex].value;
 
