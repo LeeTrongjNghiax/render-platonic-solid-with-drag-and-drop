@@ -1,7 +1,7 @@
 import createRegularSolid from "./create-regular-solid.js";
 
 const createRegularOctahedron = ({
-  scale = 1,
+  scale = 1.8,
   colors = [
     0x000000ff,
     0x0000ffff,

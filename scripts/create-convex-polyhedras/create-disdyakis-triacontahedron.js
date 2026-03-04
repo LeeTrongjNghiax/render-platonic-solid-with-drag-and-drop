@@ -3,6 +3,9 @@ import RECIPROCAL_OF_GOLDEN_RATIO from "../constants/reciprocal-of-golden-ratio.
 import createRegularSolid from "./create-regular-solid.js";
 
 const createDisdyakisTriacontahedron = ({ scale = 1, colors = [] }) => {
+  const r = Math.sqrt(25 - 10 * Math.sqrt(5)) / 3;
+  const s =
+
   return createRegularSolid({
     scale,
     colors,

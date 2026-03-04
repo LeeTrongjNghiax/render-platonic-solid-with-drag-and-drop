@@ -1,6 +1,9 @@
 import createRegularSolid from "./create-regular-solid.js";
 
-const createRhombicDodecahedron = ({ scale = 1, colors = [] }) => {
+const createRhombicDodecahedron = ({
+  scale = 2 * Math.SQRT2 / 3,
+  colors = [],
+}) => {
   return createRegularSolid({
     scale,
     colors,

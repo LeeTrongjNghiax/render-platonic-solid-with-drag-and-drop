@@ -2,7 +2,7 @@ import GOLDEN_RATIO from "../constants/golden-ratio.constant.js";
 import RECIPROCAL_OF_GOLDEN_RATION from "../constants/reciprocal-of-golden-ratio.constant.js";
 import createRegularSolid from "./create-regular-solid.js";
 
-const createTriakisIcosahedron = ({ scale = 1, colors = [] }) => {
+const createTriakisIcosahedron = ({ scale = 1.8, colors = [] }) => {
   const a = Math.sqrt(GOLDEN_RATIO ** GOLDEN_RATIO + 1);
   const b = Math.sqrt(25 + 2 * Math.sqrt(5)) / 11;
 
