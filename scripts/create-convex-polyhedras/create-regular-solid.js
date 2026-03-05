@@ -6,6 +6,7 @@ import toBase26 from "../utilities/to-base-26.js";
 import isTheSameVertex from "../maths/is-the-same-vertex.js";
 import checkIfAllVerticesAreOnTheSameSide from "../maths/check-if-all-vertices-are-on-the-same-side.js";
 import createRandomHexColor from "../utilities/create-random-hex-color.js";
+import sortVertices from "../maths/sort-vertices.js";
 
 const createRegularSolid = ({
   scale = 1,
@@ -63,6 +64,8 @@ const createRegularSolid = ({
 
   const vertexLinkCounts = vertices.map(() => 0);
 
+  let count = 0;
+
   for (let i = 0; i < vertices.length; i++) {
     for (let j = 0; j < vertices.length; j++) {
       for (let k = 0; k < vertices.length; k++) {
@@ -110,11 +113,13 @@ const createRegularSolid = ({
           )) === 0;
         });
 
+        const sortedCoplanarVertices = sortVertices(coplanarVertices, normal);
+
         const isFacesExist = faces.some(face => {
           const areEqual =
-            face.vertices.length === coplanarVertices.length &&
+            face.vertices.length === sortedCoplanarVertices.length &&
             face.vertices.every((obj, index) => {
-              const compare = coplanarVertices[index];
+              const compare = sortedCoplanarVertices[index];
 
               return obj.position.x === compare.position.x &&
                      obj.position.y === compare.position.y &&
@@ -126,17 +131,20 @@ const createRegularSolid = ({
 
         if (isFacesExist) continue;
 
-        // console.log('coplanarVertices', coplanarVertices, numberOfVerticesEachFace);
+        // if (sortedCoplanarVertices.length === 5) {
+        //   console.log('sortedCoplanarVertices', sortedCoplanarVertices, count);
+        //   count++;
+        // }
 
-        if (!numberOfVerticesEachFace.includes(coplanarVertices.length))
+        if (!numberOfVerticesEachFace.includes(sortedCoplanarVertices.length))
           continue
 
-        const d = -(normal.x * coplanarVertices[0].position.x
-                  + normal.y * coplanarVertices[0].position.y
-                  + normal.z * coplanarVertices[0].position.z);
+        const d = -(normal.x * sortedCoplanarVertices[0].position.x
+                  + normal.y * sortedCoplanarVertices[0].position.y
+                  + normal.z * sortedCoplanarVertices[0].position.z);
 
         const otherVertices = vertices.filter(
-          vertex => !coplanarVertices.some(
+          vertex => !sortedCoplanarVertices.some(
             coplanarVertex => isTheSameVertex(
               vertex.position,
               coplanarVertex.position,
@@ -157,7 +165,7 @@ const createRegularSolid = ({
         const addedFace = {
           normal,
           color: colors[faces.length] ?? createRandomHexColor(),
-          vertices: coplanarVertices,
+          vertices: sortedCoplanarVertices,
         }
 
         faces.push(addedFace);
@@ -170,6 +178,8 @@ const createRegularSolid = ({
 
     if (faces.length === maximumNumberOfFaces) break;
   }
+
+  // console.log('faces', faces);
 
   const vertexBuffersArray = [];
 
@@ -197,8 +207,9 @@ const createRegularSolid = ({
       case 4:
         indicesShiftings = [
           0, 1, 2, 0, 2, 1,
-          0, 1, 3, 0, 3, 1,
           3, 1, 2, 3, 2, 1,
+          0, 2, 3, 0, 3, 2,
+          0, 1, 3, 0, 3, 1,
         ];
         break;
       case 5:
