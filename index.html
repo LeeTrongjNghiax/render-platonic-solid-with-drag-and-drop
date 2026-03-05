@@ -243,6 +243,10 @@
               checked
             >
           </div>
+        </fieldset>
+
+        <fieldset class="c-form__fieldset">
+          <legend class="c-form__fieldset-legend">Auto Rotate</legend>
 
           <div
             class="c-form__input-group"
@@ -460,6 +464,45 @@
                 class="c-slider-input__input-upper"
                 step="0.01"
                 value="2"
+              >
+            </div>
+          </div>
+
+          <div class="c-form__input-group">
+            <label for="face-opacity">Face Opacity:</label>
+
+            <div class="c-slider-input u-flex-1">
+              <input
+                type="number"
+                id="face-opacity-lower-bound"
+                name="face-opacity-lower-bound"
+                class="c-slider-input__input-lower"
+                step="0.01"
+                value="0"
+              >
+
+              <div class="c-slider-input__input-range-container">
+                <input
+                  type="range"
+                  id="face-opacity"
+                  name="face-opacity"
+                  class="c-slider-input__input-range"
+                  step="0.01"
+                  value="1"
+                >
+
+                <div class="c-slider-input__input-range-value">
+                  -
+                </div>
+              </div>
+
+              <input
+                type="number"
+                id="face-opacity-upper-bound"
+                name="face-opacity-upper-bound"
+                class="c-slider-input__input-upper"
+                step="0.01"
+                value="1"
               >
             </div>
           </div>

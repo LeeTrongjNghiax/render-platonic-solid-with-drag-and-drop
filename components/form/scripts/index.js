@@ -29,6 +29,7 @@ let pointSizeUniformLocation;
 let objectVertexIndicesLength;
 let scaleUniformLocation;
 let faceGapUniformLocation;
+let faceOpacityUniformLocation;
 
 let rotateXSpeed = 0;
 let rotateYSpeed = 0;
@@ -114,6 +115,10 @@ const createSolid = async () => {
   const faceGap = document.querySelector(`#face-gap`);
 
   if (!faceGap) throw new Error(`Face gap not found`);
+
+  const faceOpacity = document.querySelector(`#face-opacity`);
+
+  if (!faceOpacity) throw new Error(`Face opacity not found`);
 
   const solidType = document.querySelector(`#solid-type`);
 
@@ -322,6 +327,7 @@ const createSolid = async () => {
   pointSizeUniformLocation = gl.getUniformLocation(program, 'u_pointSize');
   scaleUniformLocation = gl.getUniformLocation(program, 'u_scale');
   faceGapUniformLocation = gl.getUniformLocation(program, 'u_faceGap');
+  faceOpacityUniformLocation = gl.getUniformLocation(program, 'u_faceOpacity');
 
   objectVertexIndicesLength = object.vertexIndices.length;
 
@@ -397,6 +403,7 @@ const createSolid = async () => {
     gl.uniform1f(pointSizeUniformLocation, +pointSize.value);
     gl.uniform1f(scaleUniformLocation, +scale.value);
     gl.uniform1f(faceGapUniformLocation, +faceGap.value);
+    gl.uniform1f(faceOpacityUniformLocation, +faceOpacity.value);
     gl.drawElements(
       getDrawMode(),
       objectVertexIndicesLength,

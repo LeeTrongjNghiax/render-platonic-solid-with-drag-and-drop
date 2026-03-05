@@ -20,6 +20,7 @@ out vec4 v_color;
   uniform float u_scale;
   uniform float u_faceGap;
   uniform lowp float u_pointSize;
+  uniform lowp float u_faceOpacity;
 #endif
 
 void main() {
@@ -28,5 +29,5 @@ void main() {
     a_position * u_scale + a_normal * u_faceGap, 1.0
   );
 
-  v_color = a_color;
+  v_color = a_color * u_faceOpacity;
 }
