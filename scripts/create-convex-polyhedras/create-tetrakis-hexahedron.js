@@ -6,7 +6,7 @@ const createTetrakisHexahedron = ({ scale = 1, colors = [] }) => {
     colors,
 
     maximumNumberOfFaces: 24,
-    maximumNumberOfFacesShareTheSameVertex: 4,
+    maximumNumberOfFacesShareTheSameVertex: 6,
     numberOfVerticesEachFace: [3],
     baseVertices: [
       {
