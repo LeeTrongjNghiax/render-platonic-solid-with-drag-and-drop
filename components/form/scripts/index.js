@@ -636,7 +636,7 @@ const initiateForm = () => {
       solidType.options.length - 1
     );
   }
-  // let randomsolidTypeIndex = 0;
+  randomsolidTypeIndex = 5;
 
   solidType.value = solidType.options[randomsolidTypeIndex].value;
 

@@ -188,17 +188,26 @@ const createRegularSolid = ({
   const vertexIndexBuffersArray = [];
 
   for (let i = 0; i < faces.length; i++) {
-    let indicesShiftings = [];
+    let indicesShiftings = [0, 1, 2, 0, 2, 1];
 
     switch (faces[i].vertices.length) {
-      case 3: default:
+      case 3:
         indicesShiftings = [0, 1, 2, 0, 2, 1];
         break;
       case 4:
-        indicesShiftings = [0, 1, 2, 0, 2, 1, 0, 1, 3, 0, 3, 1, 3, 1, 2, 3, 2, 1];
+        indicesShiftings = [
+          0, 1, 2, 0, 2, 1,
+          0, 1, 3, 0, 3, 1,
+          3, 1, 2, 3, 2, 1,
+        ];
         break;
-      case 4:
-        indicesShiftings = [0, 1, 2, 0, 2, 1, 0, 1, 3, 0, 3, 1, 0, 1, 4, 0, 4, 1];
+      case 5:
+        indicesShiftings = [
+          0, 1, 2, 0, 2, 1,
+          0, 1, 3, 0, 3, 1,
+          0, 1, 4, 0, 4, 1,
+          2, 3, 4, 2, 4, 3,
+        ];
         break;
     }
 
