@@ -83,11 +83,11 @@ const createRegularSolid = ({
     }
   });
 
+  // console.log('vertices', vertices);
+
   const faces = [];
 
   const vertexLinkCounts = vertices.map(() => 0);
-
-  let count = 0;
 
   for (let i = 0; i < vertices.length; i++) {
     for (let j = 0; j < vertices.length; j++) {

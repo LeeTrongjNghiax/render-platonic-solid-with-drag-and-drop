@@ -22,6 +22,10 @@ import createPentagonalHexecontahedron from "../../../scripts/create-solids/crea
 import createRhombicuboctahedron from "../../../scripts/create-solids/create-archimedean-solids/create-rhombicuboctahedron.js";
 import createIcosidodecahedron from "../../../scripts/create-solids/create-archimedean-solids/create-icosidodecahedron.js";
 
+import createGyroelongatedSquareBipyramid from "../../../scripts/create-solids/create-johnson-solids/create-gyroelongated-square-bipyramid.js";
+import createTriaugmentedTriangularPrism from "../../../scripts/create-solids/create-johnson-solids/create-triaugmented-triangular-prism.js";
+import createSnubDisphenoid from "../../../scripts/create-solids/create-johnson-solids/create-snub-disphenoid.js";
+
 import getRandomInteger from "../../../scripts/utilities/get-random-integer.js";
 import readTextFile from "../../../scripts/utilities/read-text-file.js";
 import identity from "../../../scripts/maths/identity.js";
@@ -176,6 +180,17 @@ const createSolid = async () => {
     // Archimedean Solids
     case `rhombicuboctahedron`: object = createRhombicuboctahedron({}); break;
     case `icosidodecahedron`: object = createIcosidodecahedron({}); break;
+
+    // Johnson Solids
+    case `gyroelongated-square-bipyramid`:
+      object = createGyroelongatedSquareBipyramid({});
+      break;
+    case `triaugmented-triangular-prism`:
+      object = createTriaugmentedTriangularPrism({});
+      break;
+    case `snub-disphenoid`:
+      object = createSnubDisphenoid({});
+      break;
   }
 
   gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
