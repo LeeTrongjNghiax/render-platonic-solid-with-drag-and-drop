@@ -61,63 +61,6 @@
         </button>
       </div>
 
-      <div
-        class="c-form__input-group"
-        style="
-          --grid-template-columns: 1fr;
-          --grid-template-columns\@1024: 1fr;
-        "
-      >
-        <label for="solid-type">Choose Solid</label>
-
-        <div class="c-form__input-select-with-skip-buttons-container">
-          <button type="button" class="c-form__input-select-previous-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left-icon lucide-chevron-left"><path d="m15 18-6-6 6-6"/></svg>
-          </button>
-
-          <select
-            name="solid-type"
-            id="solid-type"
-            class="c-form__input-select"
-          >
-            <option value="">None</option>
-
-            <option disabled value="platonic-solids">Platonic Solids</option>
-
-            <option value="regular-tetrahedron">Regular Tetrahedron</option>
-            <option value="regular-hexahedron">Regular Hexahedron</option>
-            <option value="regular-octahedron">Regular Octahedron</option>
-            <option value="regular-dodecahedron">Regular Dodecahedron</option>
-            <option value="regular-icosahedron">Regular Icosahedron</option>
-
-            <option disabled value="catalan-solids">Catalan Solids</option>
-
-            <option disabled value="triakis-tetrahedron">Triakis Tetrahedron</option>
-            <option value="rhombic-dodecahedron">Rhombic Dodecahedron</option>
-            <option value="triakis-octahedron">Triakis Octahedron</option>
-            <option value="tetrakis-hexahedron">Tetrakis Hexahedron</option>
-            <option disabled value="deltoidal-icositetrahedron">Deltoidal Icositetrahedron</option>
-            <option value="disdyakis-dodecahedron">Disdyakis Dodecahedron</option>
-            <option value="pentagonal-icositetrahedron">Pentagonal Icositetrahedron</option>
-            <option value="rhombic-triacontahedron">Rhombic Triacontahedron</option>
-            <option value="triakis-icosahedron">Triakis Icosahedron</option>
-            <option value="pentakis-dodecahedron">Pentakis Dodecahedron</option>
-            <option disabled value="deltoidal-hexecontahedron">Deltoidal Hexecontahedron</option>
-            <option value="disdyakis-triacontahedron">Disdyakis Triacontahedron</option>
-            <option disabled value="pentagonal-hexecontahedron">Pentagonal Hexecontahedron</option>
-
-            <option disabled value="archimedean-solids">Archimedean Solids</option>
-
-            <option value="rhombicuboctahedron">Rhombicuboctahedron</option>
-            <option value="icosidodecahedron">Icosidodecahedron</option>
-          </select>
-
-          <button type="button" class="c-form__input-select-next-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
-          </button>
-        </div>
-      </div>
-
       <form action="#" class="c-form u-flex-1">
         <button
           type="submit"
@@ -1244,6 +1187,53 @@
     </hgroup>
 
     <canvas class="c-main__canvas"></canvas>
+
+    <div class="c-form__input-select-with-skip-buttons-container">
+      <button type="button" class="c-form__input-select-previous-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left-icon lucide-chevron-left"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+
+      <select
+        name="solid-type"
+        id="solid-type"
+        class="c-form__input-select"
+      >
+        <option value="">None</option>
+
+        <option disabled value="platonic-solids">Platonic Solids</option>
+
+        <option value="regular-tetrahedron">Regular Tetrahedron</option>
+        <option value="regular-hexahedron">Regular Hexahedron</option>
+        <option value="regular-octahedron">Regular Octahedron</option>
+        <option value="regular-dodecahedron">Regular Dodecahedron</option>
+        <option value="regular-icosahedron">Regular Icosahedron</option>
+
+        <option disabled value="catalan-solids">Catalan Solids</option>
+
+        <option disabled value="triakis-tetrahedron">Triakis Tetrahedron</option>
+        <option value="rhombic-dodecahedron">Rhombic Dodecahedron</option>
+        <option value="triakis-octahedron">Triakis Octahedron</option>
+        <option value="tetrakis-hexahedron">Tetrakis Hexahedron</option>
+        <option disabled value="deltoidal-icositetrahedron">Deltoidal Icositetrahedron</option>
+        <option value="disdyakis-dodecahedron">Disdyakis Dodecahedron</option>
+        <option value="pentagonal-icositetrahedron">Pentagonal Icositetrahedron</option>
+        <option value="rhombic-triacontahedron">Rhombic Triacontahedron</option>
+        <option value="triakis-icosahedron">Triakis Icosahedron</option>
+        <option value="pentakis-dodecahedron">Pentakis Dodecahedron</option>
+        <option disabled value="deltoidal-hexecontahedron">Deltoidal Hexecontahedron</option>
+        <option value="disdyakis-triacontahedron">Disdyakis Triacontahedron</option>
+        <option disabled value="pentagonal-hexecontahedron">Pentagonal Hexecontahedron</option>
+
+        <option disabled value="archimedean-solids">Archimedean Solids</option>
+
+        <option value="rhombicuboctahedron">Rhombicuboctahedron</option>
+        <option value="icosidodecahedron">Icosidodecahedron</option>
+      </select>
+
+      <button type="button" class="c-form__input-select-next-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+    </div>
 
     <ul class="c-controller-container">
     </ul>
