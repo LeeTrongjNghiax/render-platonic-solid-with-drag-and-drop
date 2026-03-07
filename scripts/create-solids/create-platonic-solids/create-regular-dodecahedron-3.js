@@ -1,6 +1,6 @@
-import GOLDEN_RATIO from "../constants/golden-ratio.constant.js";
-import RECIPROCAL_OF_GOLDEN_RATION from "../constants/reciprocal-of-golden-ratio.constant.js";
-import createRegularSolid from "./create-regular-solid.js";
+import GOLDEN_RATIO from "../../constants/golden-ratio.constant.js";
+import RECIPROCAL_OF_GOLDEN_RATION from "../../constants/reciprocal-of-golden-ratio.constant.js";
+import createRegularSolid from "../create-regular-solid.js";
 
 const createRegularDodecahedron3 = ({
   scale = 1,
@@ -30,7 +30,6 @@ const createRegularDodecahedron3 = ({
       {
         position: { x: 1, y: 1, z: 1 },
         signed: true,
-        permutationType: `none`,
       },
       {
         position: { x: 0, y: GOLDEN_RATIO, z: RECIPROCAL_OF_GOLDEN_RATION },

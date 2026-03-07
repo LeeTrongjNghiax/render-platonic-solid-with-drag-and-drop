@@ -1,6 +1,5 @@
-
-import GOLDEN_RATIO from "../constants/golden-ratio.constant.js";
-import createRegularSolid from "./create-regular-solid.js";
+import GOLDEN_RATIO from "../../constants/golden-ratio.constant.js";
+import createRegularSolid from "../create-regular-solid.js";
 
 const createRegularIcosahedron = ({
   scale = 1,

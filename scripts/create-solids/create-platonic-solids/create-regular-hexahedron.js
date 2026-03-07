@@ -1,5 +1,4 @@
-
-import createRegularSolid from "./create-regular-solid.js";
+import createRegularSolid from "../create-regular-solid.js";
 
 const createRegularHexahedron = ({
   scale = 1,
@@ -23,7 +22,6 @@ const createRegularHexahedron = ({
       {
         position: { x: 1, y: 1, z: 1 },
         signed: true,
-        permutationType: `none`,
       },
     ],
   });

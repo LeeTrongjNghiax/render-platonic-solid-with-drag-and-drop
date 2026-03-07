@@ -1,4 +1,4 @@
-import createRegularSolid from "./create-regular-solid.js";
+import createRegularSolid from "../create-regular-solid.js";
 
 const createRhombicDodecahedron = ({
   scale = 2 * Math.SQRT2 / 3,
@@ -15,7 +15,6 @@ const createRhombicDodecahedron = ({
       {
         position: { x: 1, y: 1, z: 1 },
         signed: true,
-        permutationType: `none`,
       },
       {
         position: { x: 0, y: 0, z: 2 },

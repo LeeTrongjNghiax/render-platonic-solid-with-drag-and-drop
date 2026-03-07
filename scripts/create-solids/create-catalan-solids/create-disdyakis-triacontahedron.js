@@ -1,5 +1,5 @@
-import GOLDEN_RATIO from "../constants/golden-ratio.constant.js";
-import createRegularSolid from "./create-regular-solid.js";
+import GOLDEN_RATIO from "../../constants/golden-ratio.constant.js";
+import createRegularSolid from "../create-regular-solid.js";
 
 const createDisdyakisTriacontahedron = ({ scale = 1.8, colors = [] }) => {
   const r = Math.sqrt(25 - 10 * Math.sqrt(5)) / 3;
@@ -25,7 +25,6 @@ const createDisdyakisTriacontahedron = ({ scale = 1.8, colors = [] }) => {
       {
         position: { x: r, y: r, z: r },
         signed: true,
-        permutationType: `none`,
       },
       {
         position: { x: 0, y: r * GOLDEN_RATIO, z: r / GOLDEN_RATIO },

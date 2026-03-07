@@ -1,7 +1,7 @@
-import GOLDEN_RATIO from "../constants/golden-ratio.constant.js";
-import RECIPROCAL_OF_GOLDEN_RATION from "../constants/reciprocal-of-golden-ratio.constant.js";
-import hexToUnitArray from "../utilities/hex-to-unit-array.js";
-import getNormalizedNormalVectorFromThreeVertices from "../utilities/get-normalized-normal-vector-from-three-vertices.js";
+import GOLDEN_RATIO from "../../constants/golden-ratio.constant.js";
+import RECIPROCAL_OF_GOLDEN_RATION from "../../constants/reciprocal-of-golden-ratio.constant.js";
+import hexToUnitArray from "../../utilities/hex-to-unit-array.js";
+import getNormalizedNormalVectorFromThreeVertices from "../../utilities/get-normalized-normal-vector-from-three-vertices.js";
 
 const createRegularDodecahedron = ({
   scale = 1,

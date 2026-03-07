@@ -1,5 +1,5 @@
-import RECIPROCAL_OF_SILVER_RATIO from "../constants/reciprocal-of-silver-ratio.constant.js";
-import createRegularSolid from "./create-regular-solid.js";
+import RECIPROCAL_OF_SILVER_RATIO from "../../constants/reciprocal-of-silver-ratio.constant.js";
+import createRegularSolid from "../create-regular-solid.js";
 
 const createTriakisOctahedron = ({ scale = 2, colors = [] }) => {
   return createRegularSolid({
@@ -17,7 +17,6 @@ const createTriakisOctahedron = ({ scale = 2, colors = [] }) => {
           z: RECIPROCAL_OF_SILVER_RATIO,
         },
         signed: true,
-        permutationType: `none`,
       },
       {
         position: { x: 0, y: 0, z: 1 },

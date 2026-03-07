@@ -1,19 +1,26 @@
-import createRegularTetrahedron from "../../../scripts/create-convex-polyhedras/create-regular-tetrahedron.js";
-import createRegularHexahedron from "../../../scripts/create-convex-polyhedras/create-regular-hexahedron.js";
-import createRegularOctahedron from "../../../scripts/create-convex-polyhedras/create-regular-octahedron.js";
-import createRegularDodecahedron from "../../../scripts/create-convex-polyhedras/create-regular-dodecahedron.js";
-import createRegularIcosahedron from "../../../scripts/create-convex-polyhedras/create-regular-icosahedron.js";
-import createRegularDodecahedron3 from "../../../scripts/create-convex-polyhedras/create-regular-dodecahedron-3.js";
-import createRhombicDodecahedron from "../../../scripts/create-convex-polyhedras/create-rhombic-dodecahedron.js";
-import createTriakisOctahedron from "../../../scripts/create-convex-polyhedras/create-triakis-octahedron.js";
-import createTetrakisHexahedron from "../../../scripts/create-convex-polyhedras/create-tetrakis-hexahedron.js";
-import createRhombicuboctahedron from "../../../scripts/create-convex-polyhedras/create-rhombicuboctahedron.js";
-import createDisdyakisDodecahedron from "../../../scripts/create-convex-polyhedras/create-disdyakis-dodecahedron.js";
-import createPentagonalIcositetrahedron from "../../../scripts/create-convex-polyhedras/create-pentagonal-icositetrahedron.js";
-import createRhombicTriacontahedron from "../../../scripts/create-convex-polyhedras/create-rhombic-triacontahedron.js";
-import createTriakisIcosahedron from "../../../scripts/create-convex-polyhedras/create-triakis-icosahedron.js";
-import createPentakisDodecahedron from "../../../scripts/create-convex-polyhedras/create-pentakis-dodecahedron.js";
-import createDisdyakisTriacontahedron from "../../../scripts/create-convex-polyhedras/create-disdyakis-triacontahedron.js";
+import createRegularTetrahedron from "../../../scripts/create-solids/create-platonic-solids/create-regular-tetrahedron.js";
+import createRegularHexahedron from "../../../scripts/create-solids/create-platonic-solids/create-regular-hexahedron.js";
+import createRegularOctahedron from "../../../scripts/create-solids/create-platonic-solids/create-regular-octahedron.js";
+import createRegularDodecahedron from "../../../scripts/create-solids/create-platonic-solids/create-regular-dodecahedron.js";
+import createRegularIcosahedron from "../../../scripts/create-solids/create-platonic-solids/create-regular-icosahedron.js";
+import createRegularDodecahedron3 from "../../../scripts/create-solids/create-platonic-solids/create-regular-dodecahedron-3.js";
+
+import createRhombicDodecahedron from "../../../scripts/create-solids/create-catalan-solids/create-rhombic-dodecahedron.js";
+import createTriakisOctahedron from "../../../scripts/create-solids/create-catalan-solids/create-triakis-octahedron.js";
+import createTetrakisHexahedron from "../../../scripts/create-solids/create-catalan-solids/create-tetrakis-hexahedron.js";
+import createDisdyakisDodecahedron from "../../../scripts/create-solids/create-catalan-solids/create-disdyakis-dodecahedron.js";
+import createPentagonalIcositetrahedron from "../../../scripts/create-solids/create-catalan-solids/create-pentagonal-icositetrahedron.js";
+import createRhombicTriacontahedron from "../../../scripts/create-solids/create-catalan-solids/create-rhombic-triacontahedron.js";
+import createTriakisIcosahedron from "../../../scripts/create-solids/create-catalan-solids/create-triakis-icosahedron.js";
+import createPentakisDodecahedron from "../../../scripts/create-solids/create-catalan-solids/create-pentakis-dodecahedron.js";
+import createDisdyakisTriacontahedron from "../../../scripts/create-solids/create-catalan-solids/create-disdyakis-triacontahedron.js";
+import createTriakisTetrahedron from "../../../scripts/create-solids/create-catalan-solids/create-triakis-tetrahedron.js";
+import createDeltoidalIcositetrahedron from "../../../scripts/create-solids/create-catalan-solids/create-deltoidal-icositetrahedron.js";
+import createDeltoidalHexecontahedron from "../../../scripts/create-solids/create-catalan-solids/create-deltoidal-hexecontahedron.js";
+import createPentagonalHexecontahedron from "../../../scripts/create-solids/create-catalan-solids/create-pentagonal-hexecontahedron.js";
+
+import createRhombicuboctahedron from "../../../scripts/create-solids/create-archimedean-solids/create-rhombicuboctahedron.js";
+import createIcosidodecahedron from "../../../scripts/create-solids/create-archimedean-solids/create-icosidodecahedron.js";
 
 import getRandomInteger from "../../../scripts/utilities/get-random-integer.js";
 import readTextFile from "../../../scripts/utilities/read-text-file.js";
@@ -136,15 +143,16 @@ const createSolid = async () => {
     case `regular-icosahedron`: object = createRegularIcosahedron({}); break;
 
     // Catalan Solids
-    // triakis tetrahedron
+    case `triakis-tetrahedron`: object = createTriakisTetrahedron({}); break;
     case `rhombic-dodecahedron`: object = createRhombicDodecahedron({}); break;
     case `triakis-octahedron`: object = createTriakisOctahedron({}); break;
     case `tetrakis-hexahedron`: object = createTetrakisHexahedron({}); break;
-    // deltoidal icositetrahedron
+    case `deltoidal-icositetrahedron`:
+      object = createDeltoidalIcositetrahedron({});
+      break;
     case `disdyakis-dodecahedron`:
       object = createDisdyakisDodecahedron({});
       break;
-    // pentagonal icositetrahedron
     case `pentagonal-icositetrahedron`:
       object = createPentagonalIcositetrahedron({});
       break;
@@ -155,13 +163,19 @@ const createSolid = async () => {
     case `pentakis-dodecahedron`:
       object = createPentakisDodecahedron({});
       break;
-    // deltoidal hexecontahedron
+    case `deltoidal-hexecontahedron`:
+      object = createDeltoidalHexecontahedron({});
+      break;
     case `disdyakis-triacontahedron`:
       object = createDisdyakisTriacontahedron({});
       break;
-    // pentagonal hexecontahedron
+    case `pentagonal-hexecontahedron`:
+      object = createPentagonalHexecontahedron({});
+      break;
 
+    // Archimedean Solids
     case `rhombicuboctahedron`: object = createRhombicuboctahedron({}); break;
+    case `icosidodecahedron`: object = createIcosidodecahedron({}); break;
   }
 
   gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());

@@ -1,5 +1,5 @@
-import SILVER_RATIO from "../constants/silver-ratio.constant.js";
-import createRegularSolid from "./create-regular-solid.js";
+import SILVER_RATIO from "../../constants/silver-ratio.constant.js";
+import createRegularSolid from "../create-regular-solid.js";
 
 const createRhombicuboctahedron = ({ scale = 0.6, colors = [] }) => {
   return createRegularSolid({

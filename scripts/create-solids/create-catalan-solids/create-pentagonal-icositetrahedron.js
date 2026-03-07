@@ -1,5 +1,5 @@
-import TRIBONACCI_CONSTANT from "../constants/tribonacci-constant.constant.js";
-import createRegularSolid from "./create-regular-solid.js";
+import TRIBONACCI_CONSTANT from "../../constants/tribonacci-constant.constant.js";
+import createRegularSolid from "../create-regular-solid.js";
 
 const createPentagonalIcositetrahedron = ({ scale = .3, colors = [] }) => {
   return createRegularSolid({
@@ -54,7 +54,6 @@ const createPentagonalIcositetrahedron = ({ scale = .3, colors = [] }) => {
           z: TRIBONACCI_CONSTANT * TRIBONACCI_CONSTANT,
         },
         signed: true,
-        permutationType: `none`,
       },
     ],
   });

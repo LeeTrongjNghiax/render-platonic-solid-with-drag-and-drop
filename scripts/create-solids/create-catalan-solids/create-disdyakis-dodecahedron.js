@@ -1,4 +1,4 @@
-import createRegularSolid from "./create-regular-solid.js";
+import createRegularSolid from "../create-regular-solid.js";
 
 const createDisdyakisDodecahedron = ({ scale = 7, colors = [] }) => {
   const a = 1 / (1 + 2 * Math.sqrt(2));
@@ -26,7 +26,6 @@ const createDisdyakisDodecahedron = ({ scale = 7, colors = [] }) => {
       {
         position: { x: c, y: c, z: c },
         signed: true,
-        permutationType: `none`,
       },
     ],
   });

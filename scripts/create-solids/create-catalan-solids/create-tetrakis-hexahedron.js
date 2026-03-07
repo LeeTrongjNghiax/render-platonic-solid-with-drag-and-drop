@@ -1,4 +1,4 @@
-import createRegularSolid from "./create-regular-solid.js";
+import createRegularSolid from "../create-regular-solid.js";
 
 const createTetrakisHexahedron = ({ scale = 1, colors = [] }) => {
   return createRegularSolid({
@@ -12,7 +12,6 @@ const createTetrakisHexahedron = ({ scale = 1, colors = [] }) => {
       {
         position: { x: 1, y: 1, z: 1 },
         signed: true,
-        permutationType: `none`,
       },
       {
         position: { x: 0, y: 0, z: 3 / 2 },

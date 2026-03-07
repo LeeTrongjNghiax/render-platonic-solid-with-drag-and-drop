@@ -1,4 +1,4 @@
-import createRegularSolid from "./create-regular-solid.js";
+import createRegularSolid from "../create-regular-solid.js";
 
 const createRegularOctahedron = ({
   scale = 1.8,

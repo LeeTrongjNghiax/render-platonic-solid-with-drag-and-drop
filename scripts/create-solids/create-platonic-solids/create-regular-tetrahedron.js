@@ -1,5 +1,4 @@
-
-import createRegularSolid from "./create-regular-solid.js";
+import createRegularSolid from "../create-regular-solid.js";
 
 const createRegularTetrahedron = ({
   scale = 1,
@@ -21,7 +20,6 @@ const createRegularTetrahedron = ({
       {
         position: { x: 1, y: 1, z: 1 },
         signed: false,
-        permutationType: `none`,
       },
       {
         position: { x: 1, y: -1, z: -1 },
