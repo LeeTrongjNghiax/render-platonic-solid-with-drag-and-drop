@@ -3,7 +3,7 @@ import createRegularSolid from "./create-regular-solid.js";
 
 const createDisdyakisTriacontahedron = ({ scale = 1.8, colors = [] }) => {
   const r = Math.sqrt(25 - 10 * Math.sqrt(5)) / 3;
-  const s = ((2 * Math.sqrt(5) - 3) * Math.sqrt(25 + 10 * Math.sqrt(5))) / 11;
+  const s = ( (2 * Math.sqrt(5) - 3) * Math.sqrt(25 + 10 * Math.sqrt(5)) ) / 11;
 
   return createRegularSolid({
     scale,

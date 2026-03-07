@@ -44,10 +44,17 @@ const createRegularSolid = ({
               : [currentVertexPosition.z];
 
           for (let z of rangeZ) {
-            vertices.push({
-              name: toBase26(vertices.length),
-              position: { x: x * scale, y: y * scale, z: z * scale },
-            });
+            if (
+              !baseVertex.conditions ||
+              baseVertex.conditions && baseVertex.conditions.every(
+                condition => condition(x, y, z)
+              )
+            ) {
+              vertices.push({
+                name: toBase26(vertices.length),
+                position: { x: x * scale, y: y * scale, z: z * scale },
+              });
+            }
           }
         }
       }

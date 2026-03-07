@@ -9,6 +9,7 @@ import createTriakisOctahedron from "../../../scripts/create-convex-polyhedras/c
 import createTetrakisHexahedron from "../../../scripts/create-convex-polyhedras/create-tetrakis-hexahedron.js";
 import createRhombicuboctahedron from "../../../scripts/create-convex-polyhedras/create-rhombicuboctahedron.js";
 import createDisdyakisDodecahedron from "../../../scripts/create-convex-polyhedras/create-disdyakis-dodecahedron.js";
+import createPentagonalIcositetrahedron from "../../../scripts/create-convex-polyhedras/create-pentagonal-icositetrahedron.js";
 import createRhombicTriacontahedron from "../../../scripts/create-convex-polyhedras/create-rhombic-triacontahedron.js";
 import createTriakisIcosahedron from "../../../scripts/create-convex-polyhedras/create-triakis-icosahedron.js";
 import createPentakisDodecahedron from "../../../scripts/create-convex-polyhedras/create-pentakis-dodecahedron.js";
@@ -144,6 +145,9 @@ const createSolid = async () => {
       object = createDisdyakisDodecahedron({});
       break;
     // pentagonal icositetrahedron
+    case `pentagonal-icositetrahedron`:
+      object = createPentagonalIcositetrahedron({});
+      break;
     case `rhombic-triacontahedron`:
       object = createRhombicTriacontahedron({});
       break;
