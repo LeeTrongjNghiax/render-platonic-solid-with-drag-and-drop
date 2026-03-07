@@ -12,12 +12,12 @@ const createTetrakisHexahedron = ({ scale = 1, colors = [] }) => {
       {
         position: { x: 1, y: 1, z: 1 },
         signed: true,
-        rotateCount: 0,
+        permutationType: `none`,
       },
       {
         position: { x: 0, y: 0, z: 3 / 2 },
         signed: true,
-        rotateCount: 2,
+        permutationType: `even`,
       },
     ],
   });

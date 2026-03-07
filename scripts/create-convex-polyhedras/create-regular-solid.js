@@ -20,9 +20,31 @@ const createRegularSolid = ({
   const vertices = [];
 
   baseVertices.forEach(baseVertex => {
-    let currentVertexPosition = baseVertex.position;
+    const edgePermutations = baseVertex.permutationType === `even`
+      ? [
+        { x: baseVertex.position.x, y: baseVertex.position.y, z: baseVertex.position.z },
+        { x: baseVertex.position.z, y: baseVertex.position.x, z: baseVertex.position.y },
+        { x: baseVertex.position.y, y: baseVertex.position.z, z: baseVertex.position.x },
+      ] : baseVertex.permutationType === `odd`
+        ? [
+          { x: baseVertex.position.y, y: baseVertex.position.x, z: baseVertex.position.z },
+          { x: baseVertex.position.z, y: baseVertex.position.y, z: baseVertex.position.x },
+          { x: baseVertex.position.x, y: baseVertex.position.z, z: baseVertex.position.y },
+        ] : baseVertex.permutationType === `all`
+          ? [
+            { x: baseVertex.position.x, y: baseVertex.position.y, z: baseVertex.position.z },
+            { x: baseVertex.position.z, y: baseVertex.position.x, z: baseVertex.position.y },
+            { x: baseVertex.position.y, y: baseVertex.position.z, z: baseVertex.position.x },
+            { x: baseVertex.position.y, y: baseVertex.position.x, z: baseVertex.position.z },
+            { x: baseVertex.position.z, y: baseVertex.position.y, z: baseVertex.position.x },
+            { x: baseVertex.position.x, y: baseVertex.position.z, z: baseVertex.position.y },
+          ] : [
+            { x: baseVertex.position.x, y: baseVertex.position.y, z: baseVertex.position.z },
+          ];
 
-    for (let i = 0; i <= baseVertex.rotateCount; i++) {
+    for (let i = 0; i < edgePermutations.length; i++) {
+      const currentVertexPosition = edgePermutations[i];
+
       const rangeX = currentVertexPosition.x === 0
         ? [0]
         : baseVertex.signed
@@ -58,12 +80,6 @@ const createRegularSolid = ({
           }
         }
       }
-
-      currentVertexPosition = {
-        x: currentVertexPosition.y,
-        y: currentVertexPosition.z,
-        z: currentVertexPosition.x,
-      };
     }
   });
 

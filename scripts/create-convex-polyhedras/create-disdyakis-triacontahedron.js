@@ -20,22 +20,22 @@ const createDisdyakisTriacontahedron = ({ scale = 1.8, colors = [] }) => {
           z: GOLDEN_RATIO / Math.sqrt(GOLDEN_RATIO + 2),
         },
         signed: true,
-        rotateCount: 2,
+        permutationType: `even`,
       },
       {
         position: { x: r, y: r, z: r },
         signed: true,
-        rotateCount: 0,
+        permutationType: `none`,
       },
       {
         position: { x: 0, y: r * GOLDEN_RATIO, z: r / GOLDEN_RATIO },
         signed: true,
-        rotateCount: 2,
+        permutationType: `even`,
       },
       {
         position: { x: s, y: 0, z: 0 },
         signed: true,
-        rotateCount: 2,
+        permutationType: `even`,
       },
       {
         position: {
@@ -44,7 +44,7 @@ const createDisdyakisTriacontahedron = ({ scale = 1.8, colors = [] }) => {
           z: s / (2 * GOLDEN_RATIO),
         },
         signed: true,
-        rotateCount: 2,
+        permutationType: `even`,
       },
     ],
   });

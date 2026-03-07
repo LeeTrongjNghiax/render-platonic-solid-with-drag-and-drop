@@ -17,12 +17,12 @@ const createTriakisIcosahedron = ({ scale = 1.8, colors = [] }) => {
       {
         position: { x: 0, y: 1 / a, z: GOLDEN_RATIO / a },
         signed: true,
-        rotateCount: 2,
+        permutationType: `even`,
       },
       {
         position: { x: b, y: b, z: b },
         signed: true,
-        rotateCount: 0,
+        permutationType: `none`,
       },
       {
         position: {
@@ -31,7 +31,7 @@ const createTriakisIcosahedron = ({ scale = 1.8, colors = [] }) => {
           z: RECIPROCAL_OF_GOLDEN_RATION * b
         },
         signed: true,
-        rotateCount: 2,
+        permutationType: `even`,
       },
     ],
   });

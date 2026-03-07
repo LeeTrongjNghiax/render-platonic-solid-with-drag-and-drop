@@ -13,7 +13,7 @@ const createRhombicuboctahedron = ({ scale = 0.6, colors = [] }) => {
       {
         position: { x: SILVER_RATIO, y: 1, z: 1 },
         signed: true,
-        rotateCount: 2,
+        permutationType: `even`,
       },
     ],
   });

@@ -17,7 +17,7 @@ const createPentagonalIcositetrahedron = ({ scale = .3, colors = [] }) => {
           z: TRIBONACCI_CONSTANT * TRIBONACCI_CONSTANT,
         },
         signed: true,
-        rotateCount: 2,
+        permutationType: `even`,
         conditions: [
           (x, y, z) => {
             const numberOfMinusSigns = [x, y, z].filter(value => value < 0).length;
@@ -29,43 +29,11 @@ const createPentagonalIcositetrahedron = ({ scale = .3, colors = [] }) => {
       {
         position: {
           x: 1,
-          y: TRIBONACCI_CONSTANT * TRIBONACCI_CONSTANT,
-          z: 2 * TRIBONACCI_CONSTANT + 1,
-        },
-        signed: true,
-        rotateCount: 0,
-        conditions: [
-          (x, y, z) => {
-            const numberOfMinusSigns = [x, y, z].filter(value => value < 0).length;
-
-            return numberOfMinusSigns % 2 === 1;
-          },
-        ],
-      },
-      {
-        position: {
-          x: TRIBONACCI_CONSTANT * TRIBONACCI_CONSTANT,
-          z: 1,
           y: 2 * TRIBONACCI_CONSTANT + 1,
-        },
-        signed: true,
-        rotateCount: 0,
-        conditions: [
-          (x, y, z) => {
-            const numberOfMinusSigns = [x, y, z].filter(value => value < 0).length;
-
-            return numberOfMinusSigns % 2 === 1;
-          },
-        ],
-      },
-      {
-        position: {
-          x: 2 * TRIBONACCI_CONSTANT + 1,
-          y: 1,
           z: TRIBONACCI_CONSTANT * TRIBONACCI_CONSTANT,
         },
         signed: true,
-        rotateCount: 0,
+        permutationType: `odd`,
         conditions: [
           (x, y, z) => {
             const numberOfMinusSigns = [x, y, z].filter(value => value < 0).length;
@@ -77,7 +45,7 @@ const createPentagonalIcositetrahedron = ({ scale = .3, colors = [] }) => {
       {
         position: { x: TRIBONACCI_CONSTANT ** 3, y: 0, z: 0 },
         signed: true,
-        rotateCount: 2,
+        permutationType: `even`,
       },
       {
         position: {
@@ -86,7 +54,7 @@ const createPentagonalIcositetrahedron = ({ scale = .3, colors = [] }) => {
           z: TRIBONACCI_CONSTANT * TRIBONACCI_CONSTANT,
         },
         signed: true,
-        rotateCount: 0,
+        permutationType: `none`,
       },
     ],
   });

@@ -38,7 +38,7 @@ const createRegularIcosahedron = ({
       {
         position: { x: 0, y: 1, z: GOLDEN_RATIO },
         signed: true,
-        rotateCount: 2,
+        permutationType: `even`,
       },
     ],
   });

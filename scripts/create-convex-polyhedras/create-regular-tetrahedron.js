@@ -21,12 +21,12 @@ const createRegularTetrahedron = ({
       {
         position: { x: 1, y: 1, z: 1 },
         signed: false,
-        rotateCount: 0,
+        permutationType: `none`,
       },
       {
         position: { x: 1, y: -1, z: -1 },
         signed: false,
-        rotateCount: 2,
+        permutationType: `even`,
       },
     ],
   });

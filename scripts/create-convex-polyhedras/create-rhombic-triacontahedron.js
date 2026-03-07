@@ -14,17 +14,17 @@ const createRhombicTriacontahedron = ({ scale = 1, colors = [] }) => {
       {
         position: { x: 1, y: 1, z: 1 },
         signed: true,
-        rotateCount: 0,
+        permutationType: `none`,
       },
       {
         position: { x: 0, y: 1, z: GOLDEN_RATIO },
         signed: true,
-        rotateCount: 2,
+        permutationType: `even`,
       },
       {
         position: { x: 0, y: GOLDEN_RATIO, z: RECIPROCAL_OF_GOLDEN_RATION },
         signed: true,
-        rotateCount: 2,
+        permutationType: `even`,
       },
     ],
   });

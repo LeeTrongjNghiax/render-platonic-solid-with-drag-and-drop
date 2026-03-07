@@ -16,17 +16,17 @@ const createDisdyakisDodecahedron = ({ scale = 7, colors = [] }) => {
       {
         position: { x: a, y: 0, z: 0 },
         signed: true,
-        rotateCount: 2,
+        permutationType: `even`,
       },
       {
         position: { x: b, y: b, z: 0 },
         signed: true,
-        rotateCount: 2,
+        permutationType: `even`,
       },
       {
         position: { x: c, y: c, z: c },
         signed: true,
-        rotateCount: 0,
+        permutationType: `none`,
       },
     ],
   });

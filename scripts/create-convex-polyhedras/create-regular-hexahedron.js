@@ -23,7 +23,7 @@ const createRegularHexahedron = ({
       {
         position: { x: 1, y: 1, z: 1 },
         signed: true,
-        rotateCount: 0,
+        permutationType: `none`,
       },
     ],
   });

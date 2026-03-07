@@ -17,12 +17,12 @@ const createTriakisOctahedron = ({ scale = 2, colors = [] }) => {
           z: RECIPROCAL_OF_SILVER_RATIO,
         },
         signed: true,
-        rotateCount: 0,
+        permutationType: `none`,
       },
       {
         position: { x: 0, y: 0, z: 1 },
         signed: true,
-        rotateCount: 2,
+        permutationType: `even`,
       },
     ],
   });
