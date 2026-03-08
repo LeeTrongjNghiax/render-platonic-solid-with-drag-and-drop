@@ -1,4 +1,5 @@
 import getNormalizedNormalVectorFromThreeVertices from "../utilities/get-normalized-normal-vector-from-three-vertices.js";
+import getMergedCombinations from "../maths/get-merged-combinations.js";
 import roundTo from "../utilities/round-to.js";
 import dot from "../maths/dot.js";
 import hexToUnitArray from "../utilities/hex-to-unit-array.js";
@@ -207,48 +208,7 @@ const createRegularSolid = ({
   let currentFaceIndex = 0;
 
   for (let i = 0; i < faces.length; i++) {
-    let indicesShiftings = [0, 1, 2, 0, 2, 1];
-
-    switch (faces[i].vertices.length) {
-      case 3:
-        indicesShiftings = [0, 1, 2, 0, 2, 1];
-        break;
-      case 4:
-        indicesShiftings = [
-          0, 1, 2, 0, 2, 1,
-          3, 1, 2, 3, 2, 1,
-          0, 2, 3, 0, 3, 2,
-          0, 1, 3, 0, 3, 1,
-        ];
-        break;
-      case 5:
-        indicesShiftings = [
-          0, 1, 2, 0, 2, 1,
-          0, 1, 3, 0, 3, 1,
-          0, 1, 4, 0, 4, 1,
-          0, 2, 3, 0, 3, 2,
-          0, 2, 4, 0, 4, 2,
-          2, 3, 4, 2, 4, 3,
-        ];
-        break;
-      case 6:
-        indicesShiftings = [
-          0, 1, 2, 0, 2, 1,
-          0, 1, 3, 0, 3, 1,
-          0, 1, 4, 0, 4, 1,
-          0, 1, 5, 0, 5, 1,
-          0, 2, 3, 0, 3, 2,
-          0, 2, 4, 0, 4, 2,
-          0, 2, 5, 0, 5, 1,
-          1, 2, 3, 1, 3, 2,
-          1, 2, 4, 1, 4, 2,
-          1, 2, 5, 1, 5, 2,
-          2, 3, 4, 2, 4, 3,
-          2, 3, 5, 2, 5, 3,
-          3, 4, 5, 3, 5, 4,
-        ];
-        break;
-    }
+    const indicesShiftings = getMergedCombinations(faces[i].vertices.length, 3);
 
     const indices = indicesShiftings.map(
       index => currentFaceIndex + index

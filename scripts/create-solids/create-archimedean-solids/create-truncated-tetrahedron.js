@@ -1,6 +1,6 @@
 import createRegularSolid from "../create-regular-solid.js";
 
-const createTruncatedTetrahedron = ({ scale = 1, colors = [] }) => {
+const createTruncatedTetrahedron = ({ scale = 1.5, colors = [] }) => {
   return createRegularSolid({
     scale,
     colors,

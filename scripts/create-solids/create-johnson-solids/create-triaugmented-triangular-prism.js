@@ -1,6 +1,6 @@
 import createRegularSolid from "../create-regular-solid.js";
 
-const createTriaugmentedTriangularPrism = ({ scale = 1, colors = [] }) => {
+const createTriaugmentedTriangularPrism = ({ scale = .9, colors = [] }) => {
   return createRegularSolid({
     scale,
     colors,

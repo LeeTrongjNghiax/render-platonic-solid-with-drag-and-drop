@@ -1,16 +1,20 @@
 import SILVER_RATIO from "../../constants/silver-ratio.constant.js";
 import createRegularSolid from "../create-regular-solid.js";
 
-const createRhombicuboctahedron = ({ scale = .7, colors = [] }) => {
+const createTruncatedCube = ({ scale = 1.3, colors = [] }) => {
   return createRegularSolid({
     scale,
     colors,
 
-    maximumNumberOfFacesShareTheSameVertex: 4,
-    numberOfVerticesEachFace: [3, 4],
+    maximumNumberOfFacesShareTheSameVertex: 3,
+    numberOfVerticesEachFace: [3, 8],
     baseVertices: [
       {
-        position: { x: SILVER_RATIO, y: 1, z: 1 },
+        position: {
+          x: 1 / SILVER_RATIO,
+          y: 1,
+          z: 1,
+        },
         signed: true,
         permutationType: `even`,
       },
@@ -18,4 +22,4 @@ const createRhombicuboctahedron = ({ scale = .7, colors = [] }) => {
   });
 }
 
-export default createRhombicuboctahedron;
+export default createTruncatedCube;

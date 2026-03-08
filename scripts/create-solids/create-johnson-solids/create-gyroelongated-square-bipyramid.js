@@ -1,6 +1,6 @@
 import createRegularSolid from "../create-regular-solid.js";
 
-const createGyroelongatedSquareBipyramid = ({ scale = 1, colors = [] }) => {
+const createGyroelongatedSquareBipyramid = ({ scale = .8, colors = [] }) => {
   return createRegularSolid({
     scale,
     colors,
