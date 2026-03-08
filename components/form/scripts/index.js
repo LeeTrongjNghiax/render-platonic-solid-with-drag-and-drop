@@ -24,6 +24,7 @@ import createTruncatedCube from "../../../scripts/create-solids/create-archimede
 import createTruncatedOctahedron from "../../../scripts/create-solids/create-archimedean-solids/create-truncated-octahedron.js";
 import createRhombicuboctahedron from "../../../scripts/create-solids/create-archimedean-solids/create-rhombicuboctahedron.js";
 import createIcosidodecahedron from "../../../scripts/create-solids/create-archimedean-solids/create-icosidodecahedron.js";
+import createTruncatedIcosahedron from "../../../scripts/create-solids/create-archimedean-solids/create-truncated-icosahedron.js";
 import createTruncatedCuboctahedron from "../../../scripts/create-solids/create-archimedean-solids/create-truncated-cuboctahedron.js";
 import createSnubCube from "../../../scripts/create-solids/create-archimedean-solids/create-snub-cube.js";
 import createTruncatedDodecahedron from "../../../scripts/create-solids/create-archimedean-solids/create-truncated-dodecahedron.js";
@@ -31,9 +32,12 @@ import createRhombicosidodecahedron from "../../../scripts/create-solids/create-
 import createTruncatedIcosaidodecahedron from "../../../scripts/create-solids/create-archimedean-solids/create-truncated-icosidodecahedron.js";
 import createSnubDodecahedron from "../../../scripts/create-solids/create-archimedean-solids/create-snub-dodecahedron.js";
 
+import createSquarePyramid from "../../../scripts/create-solids/create-johnson-solids/create-square-pyramid.js";
+import createPentagonalPyramid from "../../../scripts/create-solids/create-johnson-solids/create-pentagonal-pyramid.js";
 import createGyroelongatedSquareBipyramid from "../../../scripts/create-solids/create-johnson-solids/create-gyroelongated-square-bipyramid.js";
 import createTriaugmentedTriangularPrism from "../../../scripts/create-solids/create-johnson-solids/create-triaugmented-triangular-prism.js";
 import createSnubDisphenoid from "../../../scripts/create-solids/create-johnson-solids/create-snub-disphenoid.js";
+import createPentagonalBipyramid from "../../../scripts/create-solids/create-johnson-solids/create-pentagonal-bipyramid.js";
 
 import getRandomInteger from "../../../scripts/utilities/get-random-integer.js";
 import readTextFile from "../../../scripts/utilities/read-text-file.js";
@@ -194,25 +198,36 @@ const createSolid = async () => {
     case `truncated-cube`: object = createTruncatedCube({}); break;
     case `truncated-octahedron`: object = createTruncatedOctahedron({}); break;
     case `rhombicuboctahedron`: object = createRhombicuboctahedron({}); break;
-    case `truncated-cuboctahedron`: object = createTruncatedCuboctahedron({}); break;
+    case `truncated-cuboctahedron`:
+      object = createTruncatedCuboctahedron({});
+      break;
     case `snub-cube`: object = createSnubCube({}); break;
     case `icosidodecahedron`: object = createIcosidodecahedron({}); break;
-    case `truncated-dodecahedron`: object = createTruncatedDodecahedron({}); break;
-    case `truncated-icosahedron`: object = createTruncatedIcosahedron({}); break;
-    case `rhombicosidodecahedron`: object = createRhombicosidodecahedron({}); break;
-    case `truncated-icosidodecahedron`: object = createTruncatedIcosaidodecahedron({}); break;
+    case `truncated-dodecahedron`:
+      object = createTruncatedDodecahedron({});
+      break;
+    case `truncated-icosahedron`:
+      object = createTruncatedIcosahedron({});
+      break;
+    case `rhombicosidodecahedron`:
+      object = createRhombicosidodecahedron({});
+      break;
+    case `truncated-icosidodecahedron`:
+      object = createTruncatedIcosaidodecahedron({});
+      break;
     case `snub-dodecahedron`: object = createSnubDodecahedron({}); break;
 
     // Johnson Solids
+    case `square-pyramid`: object = createSquarePyramid({}); break;
+    case `pentagonal-pyramid`: object = createPentagonalPyramid({}); break;
     case `gyroelongated-square-bipyramid`:
       object = createGyroelongatedSquareBipyramid({});
       break;
     case `triaugmented-triangular-prism`:
       object = createTriaugmentedTriangularPrism({});
       break;
-    case `snub-disphenoid`:
-      object = createSnubDisphenoid({});
-      break;
+    case `snub-disphenoid`: object = createSnubDisphenoid({}); break;
+    case `pentagonal-bipyramid`: object = createPentagonalBipyramid({}); break;
   }
 
   gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());

@@ -6,6 +6,7 @@ const createRhombicuboctahedron = ({ scale = .7, colors = [] }) => {
     scale,
     colors,
 
+    maximumNumberOfFaces: 62,
     baseVertices: [
       {
         position: { x: SILVER_RATIO, y: 1, z: 1 },
