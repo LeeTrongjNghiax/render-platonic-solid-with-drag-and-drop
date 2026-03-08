@@ -6,6 +6,7 @@ const createIcosidodecahedron = ({ scale = 1.9, colors = [] }) => {
     scale,
     colors,
 
+    maximumNumberOfFaces: 32,
     baseVertices: [
       { position: { x: 1, y: 0, z: 0 }, signed: true, permutationType: `even` },
       {

@@ -12,6 +12,8 @@ import sortVertices from "../maths/sort-vertices.js";
 const createRegularSolid = ({
   scale = 1,
   colors = [],
+
+  maximumNumberOfFaces = Infinity,
   baseVertices = [],
 }) => {
   const vertices = [];
@@ -176,8 +178,14 @@ const createRegularSolid = ({
         }
 
         faces.push(addedFace);
+
+        if (faces.length === maximumNumberOfFaces) break;
       }
+
+      if (faces.length === maximumNumberOfFaces) break;
     }
+
+    if (faces.length === maximumNumberOfFaces) break;
   }
 
   const vertexBuffersArray = [];

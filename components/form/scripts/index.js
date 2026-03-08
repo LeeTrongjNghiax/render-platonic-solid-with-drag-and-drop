@@ -24,6 +24,9 @@ import createTruncatedCube from "../../../scripts/create-solids/create-archimede
 import createTruncatedOctahedron from "../../../scripts/create-solids/create-archimedean-solids/create-truncated-octahedron.js";
 import createRhombicuboctahedron from "../../../scripts/create-solids/create-archimedean-solids/create-rhombicuboctahedron.js";
 import createIcosidodecahedron from "../../../scripts/create-solids/create-archimedean-solids/create-icosidodecahedron.js";
+import createTruncatedCuboctahedron from "../../../scripts/create-solids/create-archimedean-solids/create-truncated-cuboctahedron.js";
+import createSnubCube from "../../../scripts/create-solids/create-archimedean-solids/create-snub-cube.js";
+import createTruncatedDodecahedron from "../../../scripts/create-solids/create-archimedean-solids/create-truncated-dodecahedron.js";
 
 import createGyroelongatedSquareBipyramid from "../../../scripts/create-solids/create-johnson-solids/create-gyroelongated-square-bipyramid.js";
 import createTriaugmentedTriangularPrism from "../../../scripts/create-solids/create-johnson-solids/create-triaugmented-triangular-prism.js";
@@ -181,14 +184,17 @@ const createSolid = async () => {
       break;
 
     // Archimedean Solids
-    case `cuboctahedron`: object = createCuboctahedron({}); break;
     case `truncated-tetrahedron`:
       object = createTruncatedTetrahedron({});
       break;
+    case `cuboctahedron`: object = createCuboctahedron({}); break;
     case `truncated-cube`: object = createTruncatedCube({}); break;
     case `truncated-octahedron`: object = createTruncatedOctahedron({}); break;
     case `rhombicuboctahedron`: object = createRhombicuboctahedron({}); break;
+    case `truncated-cuboctahedron`: object = createTruncatedCuboctahedron({}); break;
+    case `snub-cube`: object = createSnubCube({}); break;
     case `icosidodecahedron`: object = createIcosidodecahedron({}); break;
+    case `truncated-dodecahedron`: object = createTruncatedDodecahedron({}); break;
 
     // Johnson Solids
     case `gyroelongated-square-bipyramid`:

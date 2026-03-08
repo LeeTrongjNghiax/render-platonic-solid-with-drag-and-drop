@@ -9,6 +9,7 @@ const createPentakisDodecahedron = ({ scale = 1, colors = [] }) => {
     scale,
     colors,
 
+    maximumNumberOfFaces: 60,
     baseVertices: [
       {
         position: { x: 0, y: a, z: GOLDEN_RATIO * a },
