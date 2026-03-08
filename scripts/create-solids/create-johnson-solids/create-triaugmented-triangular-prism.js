@@ -5,7 +5,6 @@ const createTriaugmentedTriangularPrism = ({ scale = 1, colors = [] }) => {
     scale,
     colors,
 
-    maximumNumberOfFaces: 14,
     maximumNumberOfFacesShareTheSameVertex: 5,
     numberOfVerticesEachFace: [3],
     baseVertices: [

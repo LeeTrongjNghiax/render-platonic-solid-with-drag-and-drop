@@ -9,7 +9,6 @@ const createDisdyakisTriacontahedron = ({ scale = 1.8, colors = [] }) => {
     scale,
     colors,
 
-    maximumNumberOfFaces: 120,
     maximumNumberOfFacesShareTheSameVertex: 10,
     numberOfVerticesEachFace: [3],
     baseVertices: [

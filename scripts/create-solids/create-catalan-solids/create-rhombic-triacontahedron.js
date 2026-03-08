@@ -7,7 +7,6 @@ const createRhombicTriacontahedron = ({ scale = 1, colors = [] }) => {
     scale,
     colors,
 
-    maximumNumberOfFaces: 30,
     maximumNumberOfFacesShareTheSameVertex: 5,
     numberOfVerticesEachFace: [4],
     baseVertices: [

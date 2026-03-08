@@ -12,7 +12,6 @@ const createRegularSolid = ({
   scale = 1,
   colors = [],
 
-  maximumNumberOfFaces = 6,
   maximumNumberOfFacesShareTheSameVertex = 3,
   numberOfVerticesEachFace = [],
   baseVertices = [],
@@ -83,8 +82,6 @@ const createRegularSolid = ({
     }
   });
 
-  // console.log('vertices', vertices);
-
   const faces = [];
 
   const vertexLinkCounts = vertices.map(() => 0);
@@ -154,11 +151,6 @@ const createRegularSolid = ({
 
         if (isFacesExist) continue;
 
-        // if (sortedCoplanarVertices.length === 5) {
-        //   console.log('sortedCoplanarVertices', sortedCoplanarVertices, count);
-        //   count++;
-        // }
-
         if (!numberOfVerticesEachFace.includes(sortedCoplanarVertices.length))
           continue
 
@@ -192,17 +184,9 @@ const createRegularSolid = ({
         }
 
         faces.push(addedFace);
-
-        if (faces.length === maximumNumberOfFaces) break;
       }
-
-      if (faces.length === maximumNumberOfFaces) break;
     }
-
-    if (faces.length === maximumNumberOfFaces) break;
   }
-
-  // console.log('faces', faces);
 
   const vertexBuffersArray = [];
 

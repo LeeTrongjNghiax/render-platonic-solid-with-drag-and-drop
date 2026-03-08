@@ -18,7 +18,6 @@ const createSnubDisphenoid = ({ scale = 1, colors = [] }) => {
     scale,
     colors,
 
-    maximumNumberOfFaces: 12,
     maximumNumberOfFacesShareTheSameVertex: 5,
     numberOfVerticesEachFace: [3],
     baseVertices: [

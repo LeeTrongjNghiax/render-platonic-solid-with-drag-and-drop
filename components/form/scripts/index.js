@@ -1,9 +1,8 @@
 import createRegularTetrahedron from "../../../scripts/create-solids/create-platonic-solids/create-regular-tetrahedron.js";
 import createRegularHexahedron from "../../../scripts/create-solids/create-platonic-solids/create-regular-hexahedron.js";
 import createRegularOctahedron from "../../../scripts/create-solids/create-platonic-solids/create-regular-octahedron.js";
-import createRegularDodecahedron from "../../../scripts/create-solids/create-platonic-solids/create-regular-dodecahedron.js";
 import createRegularIcosahedron from "../../../scripts/create-solids/create-platonic-solids/create-regular-icosahedron.js";
-import createRegularDodecahedron3 from "../../../scripts/create-solids/create-platonic-solids/create-regular-dodecahedron-3.js";
+import createRegularDodecahedron from "../../../scripts/create-solids/create-platonic-solids/create-regular-dodecahedron.js";
 
 import createRhombicDodecahedron from "../../../scripts/create-solids/create-catalan-solids/create-rhombic-dodecahedron.js";
 import createTriakisOctahedron from "../../../scripts/create-solids/create-catalan-solids/create-triakis-octahedron.js";
@@ -143,7 +142,7 @@ const createSolid = async () => {
       object = createRegularHexahedron({});
       break;
     case `regular-octahedron`: object = createRegularOctahedron({}); break;
-    case `regular-dodecahedron`: object = createRegularDodecahedron3({}); break;
+    case `regular-dodecahedron`: object = createRegularDodecahedron({}); break;
     case `regular-icosahedron`: object = createRegularIcosahedron({}); break;
 
     // Catalan Solids

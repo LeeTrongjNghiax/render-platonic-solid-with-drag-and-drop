@@ -1,15 +1,14 @@
 import createRegularSolid from "../create-regular-solid.js";
 
 const createDisdyakisDodecahedron = ({ scale = 7, colors = [] }) => {
-  const a = 1 / (1 + 2 * Math.sqrt(2));
-  const b = 1 / (2 + 3 * Math.sqrt(2));
-  const c = 1 / (3 + 3 * Math.sqrt(2));
+  const a = 1 / (1 + 2 * Math.SQRT2);
+  const b = 1 / (2 + 3 * Math.SQRT2);
+  const c = 1 / (3 + 3 * Math.SQRT2);
 
   return createRegularSolid({
     scale,
     colors,
 
-    maximumNumberOfFaces: 48,
     maximumNumberOfFacesShareTheSameVertex: 8,
     numberOfVerticesEachFace: [3],
     baseVertices: [

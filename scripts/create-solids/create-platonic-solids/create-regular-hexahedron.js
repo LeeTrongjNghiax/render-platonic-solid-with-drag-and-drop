@@ -15,14 +15,10 @@ const createRegularHexahedron = ({
     scale,
     colors,
 
-    maximumNumberOfFaces: 6,
     maximumNumberOfFacesShareTheSameVertex: 3,
     numberOfVerticesEachFace: [4],
     baseVertices: [
-      {
-        position: { x: 1, y: 1, z: 1 },
-        signed: true,
-      },
+      { position: { x: 1, y: 1, z: 1 }, signed: true },
     ],
   });
 }

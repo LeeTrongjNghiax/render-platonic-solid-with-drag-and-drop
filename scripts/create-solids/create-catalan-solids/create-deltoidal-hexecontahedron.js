@@ -3,7 +3,6 @@ const createDeltoidalHexecontahedron = ({ scale = 1, colors = [] }) => {
     scale,
     colors,
 
-    maximumNumberOfFaces: 6,
     maximumNumberOfFacesShareTheSameVertex: 3,
     numberOfVerticesEachFace: [4],
     baseVertices: [
