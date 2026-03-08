@@ -1,7 +1,7 @@
 import GOLDEN_RATIO from "../../constants/golden-ratio.constant.js";
 import createRegularSolid from "../create-regular-solid.js";
 
-const createIcosidodecahedron = ({ scale = 1, colors = [] }) => {
+const createIcosidodecahedron = ({ scale = 1.9, colors = [] }) => {
   return createRegularSolid({
     scale,
     colors,
