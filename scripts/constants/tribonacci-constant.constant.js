@@ -1,3 +1,3 @@
-const TRIBONACCI_CONSTANT = Math.cbrt( ( 1 + ( 19 + 3 * Math.sqrt(33) ) ) + Math.cbrt( ( 19 - 3 * Math.sqrt(33) ) ) ) / 3;
+const TRIBONACCI_CONSTANT = (1 + 4 * Math.cosh( (1 / 3) * Math.acosh(19 / 8) )) / 3
 
 export default TRIBONACCI_CONSTANT;

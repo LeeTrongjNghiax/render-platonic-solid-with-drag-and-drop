@@ -48,9 +48,9 @@ const createPentagonalIcositetrahedron = ({ scale = .3, colors = [] }) => {
       },
       {
         position: {
-          x: TRIBONACCI_CONSTANT * TRIBONACCI_CONSTANT,
-          y: TRIBONACCI_CONSTANT * TRIBONACCI_CONSTANT,
-          z: TRIBONACCI_CONSTANT * TRIBONACCI_CONSTANT,
+          x: TRIBONACCI_CONSTANT ** 2,
+          y: TRIBONACCI_CONSTANT ** 2,
+          z: TRIBONACCI_CONSTANT ** 2,
         },
         signed: true,
       },
