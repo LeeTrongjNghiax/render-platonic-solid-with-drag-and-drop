@@ -27,6 +27,9 @@ import createIcosidodecahedron from "../../../scripts/create-solids/create-archi
 import createTruncatedCuboctahedron from "../../../scripts/create-solids/create-archimedean-solids/create-truncated-cuboctahedron.js";
 import createSnubCube from "../../../scripts/create-solids/create-archimedean-solids/create-snub-cube.js";
 import createTruncatedDodecahedron from "../../../scripts/create-solids/create-archimedean-solids/create-truncated-dodecahedron.js";
+import createRhombicosidodecahedron from "../../../scripts/create-solids/create-archimedean-solids/create-rhombicosidodecahedron.js";
+import createTruncatedIcosaidodecahedron from "../../../scripts/create-solids/create-archimedean-solids/create-truncated-icosidodecahedron.js";
+import createSnubDodecahedron from "../../../scripts/create-solids/create-archimedean-solids/create-snub-dodecahedron.js";
 
 import createGyroelongatedSquareBipyramid from "../../../scripts/create-solids/create-johnson-solids/create-gyroelongated-square-bipyramid.js";
 import createTriaugmentedTriangularPrism from "../../../scripts/create-solids/create-johnson-solids/create-triaugmented-triangular-prism.js";
@@ -195,6 +198,10 @@ const createSolid = async () => {
     case `snub-cube`: object = createSnubCube({}); break;
     case `icosidodecahedron`: object = createIcosidodecahedron({}); break;
     case `truncated-dodecahedron`: object = createTruncatedDodecahedron({}); break;
+    case `truncated-icosahedron`: object = createTruncatedIcosahedron({}); break;
+    case `rhombicosidodecahedron`: object = createRhombicosidodecahedron({}); break;
+    case `truncated-icosidodecahedron`: object = createTruncatedIcosaidodecahedron({}); break;
+    case `snub-dodecahedron`: object = createSnubDodecahedron({}); break;
 
     // Johnson Solids
     case `gyroelongated-square-bipyramid`:
