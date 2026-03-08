@@ -1,7 +1,7 @@
 import GOLDEN_RATIO from "../../constants/golden-ratio.constant.js";
 import createRegularSolid from "../create-regular-solid.js";
 
-const createIcosidodecahedron = ({ scale = 1.9, colors = [] }) => {
+const createIcosidodecahedron = ({ scale = 1, colors = [] }) => {
   return createRegularSolid({
     scale,
     colors,
@@ -15,11 +15,7 @@ const createIcosidodecahedron = ({ scale = 1.9, colors = [] }) => {
         permutationType: `even`,
       },
       {
-        position: {
-          x: GOLDEN_RATIO / 2,
-          y: 1 / (GOLDEN_RATIO * 2),
-          z: 1 / 2,
-        },
+        position: { x: GOLDEN_RATIO / 2, y: 1 / (GOLDEN_RATIO * 2), z: 1 / 2 },
         signed: true,
         permutationType: `even`,
       },
