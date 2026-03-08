@@ -6,7 +6,6 @@ const createGyroelongatedSquareBipyramid = ({ scale = .8, colors = [] }) => {
     colors,
 
     maximumNumberOfFacesShareTheSameVertex: 5,
-    numberOfVerticesEachFace: [3],
     baseVertices: [
       { position: { x: 1, y: 1, z: 2 ** (-1 / 4) }, signed: false },
       { position: { x: 1, y: -1, z: 2 ** (-1 / 4) }, signed: false },

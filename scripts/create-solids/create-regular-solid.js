@@ -14,7 +14,6 @@ const createRegularSolid = ({
   colors = [],
 
   maximumNumberOfFacesShareTheSameVertex = 3,
-  numberOfVerticesEachFace = [],
   baseVertices = [],
 }) => {
   const vertices = [];
@@ -152,8 +151,8 @@ const createRegularSolid = ({
 
         if (isFacesExist) continue;
 
-        if (!numberOfVerticesEachFace.includes(sortedCoplanarVertices.length))
-          continue
+        // if (!numberOfVerticesEachFace.includes(sortedCoplanarVertices.length))
+        //   continue
 
         const d = -(normal.x * sortedCoplanarVertices[0].position.x
                   + normal.y * sortedCoplanarVertices[0].position.y

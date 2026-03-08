@@ -9,7 +9,6 @@ const createRhombicDodecahedron = ({
     colors,
 
     maximumNumberOfFacesShareTheSameVertex: 4,
-    numberOfVerticesEachFace: [4],
     baseVertices: [
       {
         position: { x: 1, y: 1, z: 1 },

@@ -4,7 +4,6 @@ const createTriakisTetrahedron = ({ scale = 1, colors = [] }) => {
     colors,
 
     maximumNumberOfFacesShareTheSameVertex: 3,
-    numberOfVerticesEachFace: [4],
     baseVertices: [
       {
         position: { x: 0, y: 0, z: 0 },

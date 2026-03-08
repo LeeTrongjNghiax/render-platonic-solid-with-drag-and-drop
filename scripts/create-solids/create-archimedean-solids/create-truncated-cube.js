@@ -7,7 +7,6 @@ const createTruncatedCube = ({ scale = 1.3, colors = [] }) => {
     colors,
 
     maximumNumberOfFacesShareTheSameVertex: 3,
-    numberOfVerticesEachFace: [3, 8],
     baseVertices: [
       {
         position: {

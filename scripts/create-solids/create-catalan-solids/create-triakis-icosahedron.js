@@ -11,7 +11,6 @@ const createTriakisIcosahedron = ({ scale = 1.8, colors = [] }) => {
     colors,
 
     maximumNumberOfFacesShareTheSameVertex: 10,
-    numberOfVerticesEachFace: [3],
     baseVertices: [
       {
         position: { x: 0, y: 1 / a, z: GOLDEN_RATIO / a },

@@ -6,7 +6,6 @@ const createRegularOctahedron = ({ scale = 1.8, colors = [] }) => {
     colors,
 
     maximumNumberOfFacesShareTheSameVertex: 4,
-    numberOfVerticesEachFace: [3],
     baseVertices: [
       {
         position: { x: 0, y: 0, z: 1 },

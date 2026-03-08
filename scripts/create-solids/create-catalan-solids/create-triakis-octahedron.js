@@ -7,7 +7,6 @@ const createTriakisOctahedron = ({ scale = 2, colors = [] }) => {
     colors,
 
     maximumNumberOfFacesShareTheSameVertex: 8,
-    numberOfVerticesEachFace: [3],
     baseVertices: [
       {
         position: {

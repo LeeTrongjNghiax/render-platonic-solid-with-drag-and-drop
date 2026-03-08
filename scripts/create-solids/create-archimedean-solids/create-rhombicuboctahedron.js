@@ -7,7 +7,6 @@ const createRhombicuboctahedron = ({ scale = .7, colors = [] }) => {
     colors,
 
     maximumNumberOfFacesShareTheSameVertex: 4,
-    numberOfVerticesEachFace: [3, 4],
     baseVertices: [
       {
         position: { x: SILVER_RATIO, y: 1, z: 1 },

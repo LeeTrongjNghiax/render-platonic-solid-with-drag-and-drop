@@ -7,7 +7,6 @@ const createIcosidodecahedron = ({ scale = 1.9, colors = [] }) => {
     colors,
 
     maximumNumberOfFacesShareTheSameVertex: 4,
-    numberOfVerticesEachFace: [3, 5],
     baseVertices: [
       {
         position: { x: 1, y: 0, z: 0 },

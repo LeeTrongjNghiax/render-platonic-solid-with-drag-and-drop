@@ -6,7 +6,6 @@ const createRegularTetrahedron = ({ scale = 1, colors = [] }) => {
     colors,
 
     maximumNumberOfFacesShareTheSameVertex: 3,
-    numberOfVerticesEachFace: [3],
     baseVertices: [
       { position: { x: 1, y: 1, z: 1 }, signed: false },
       {

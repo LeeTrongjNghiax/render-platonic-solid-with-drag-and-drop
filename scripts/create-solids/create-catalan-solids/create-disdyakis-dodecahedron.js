@@ -10,7 +10,6 @@ const createDisdyakisDodecahedron = ({ scale = 7, colors = [] }) => {
     colors,
 
     maximumNumberOfFacesShareTheSameVertex: 8,
-    numberOfVerticesEachFace: [3],
     baseVertices: [
       {
         position: { x: a, y: 0, z: 0 },
