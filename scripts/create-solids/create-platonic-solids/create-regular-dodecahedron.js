@@ -6,17 +6,17 @@ const createRegularDodecahedron = ({
   scale = 1,
   colors = [
     0xffffffff, // White
+    0x800080ff, // Purple
+    0x006400ff, // Dark Green
     0xffff00ff, // Yellow
     0x00008bff, // Dark Blue
-    0x800080ff, // Purple
-    0xf5f5dcff, // Beige
-    0x808080ff, // Gray
-    0xff00ffff, // Purple
-    0x87ceebff, // Sky Blue
-    0xff0000ff, // Red
-    0x006400ff, // Dark Green
-    0x32cd32ff, // Lime Green
     0xffa800ff, // Orange
+    0x87ceebff, // Sky Blue
+    0x32cd32ff, // Lime Green
+    0xff0000ff, // Red
+    0xf5f5dcff, // Beige
+    0xff00ffff, // Pink
+    0x808080ff, // Gray
   ],
 }) => {
   return createRegularSolid({
