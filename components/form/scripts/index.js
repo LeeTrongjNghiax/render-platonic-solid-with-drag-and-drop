@@ -21,6 +21,7 @@ import createPentagonalHexecontahedron from "../../../scripts/create-solids/crea
 import createCuboctahedron from "../../../scripts/create-solids/create-archimedean-solids/create-cuboctahedron.js";
 import createTruncatedTetrahedron from "../../../scripts/create-solids/create-archimedean-solids/create-truncated-tetrahedron.js";
 import createTruncatedCube from "../../../scripts/create-solids/create-archimedean-solids/create-truncated-cube.js";
+import createTruncatedOctahedron from "../../../scripts/create-solids/create-archimedean-solids/create-truncated-octahedron.js";
 import createRhombicuboctahedron from "../../../scripts/create-solids/create-archimedean-solids/create-rhombicuboctahedron.js";
 import createIcosidodecahedron from "../../../scripts/create-solids/create-archimedean-solids/create-icosidodecahedron.js";
 
@@ -185,6 +186,7 @@ const createSolid = async () => {
       object = createTruncatedTetrahedron({});
       break;
     case `truncated-cube`: object = createTruncatedCube({}); break;
+    case `truncated-octahedron`: object = createTruncatedOctahedron({}); break;
     case `rhombicuboctahedron`: object = createRhombicuboctahedron({}); break;
     case `icosidodecahedron`: object = createIcosidodecahedron({}); break;
 

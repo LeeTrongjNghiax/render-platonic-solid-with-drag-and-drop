@@ -12,8 +12,6 @@ import sortVertices from "../maths/sort-vertices.js";
 const createRegularSolid = ({
   scale = 1,
   colors = [],
-
-  maximumNumberOfFacesShareTheSameVertex = 3,
   baseVertices = [],
 }) => {
   const vertices = [];
@@ -90,12 +88,6 @@ const createRegularSolid = ({
     for (let j = 0; j < vertices.length; j++) {
       for (let k = 0; k < vertices.length; k++) {
         if (i === j || j === k || k === i) continue;
-
-        if (
-          vertexLinkCounts[i] > maximumNumberOfFacesShareTheSameVertex ||
-          vertexLinkCounts[j] > maximumNumberOfFacesShareTheSameVertex ||
-          vertexLinkCounts[k] > maximumNumberOfFacesShareTheSameVertex
-        ) continue;
 
         const normal = getNormalizedNormalVectorFromThreeVertices({
           vertexA: vertices[i].position,

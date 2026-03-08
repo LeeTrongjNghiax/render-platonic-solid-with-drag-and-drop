@@ -3,10 +3,7 @@ const createDeltoidalIcositetrahedron = ({ scale = 1, colors = [] }) => {
     scale,
     colors,
 
-    maximumNumberOfFacesShareTheSameVertex: 5,
-    baseVertices: [
-      { position: { x: 1, y: 1, z: 1 }, signed: true },
-    ],
+    baseVertices: [ { position: { x: 1, y: 1, z: 1 }, signed: true } ],
   });
 }
 

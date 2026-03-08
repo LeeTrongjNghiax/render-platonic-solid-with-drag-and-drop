@@ -9,7 +9,6 @@ const createDisdyakisTriacontahedron = ({ scale = 1.8, colors = [] }) => {
     scale,
     colors,
 
-    maximumNumberOfFacesShareTheSameVertex: 10,
     baseVertices: [
       {
         position: {
@@ -20,10 +19,7 @@ const createDisdyakisTriacontahedron = ({ scale = 1.8, colors = [] }) => {
         signed: true,
         permutationType: `even`,
       },
-      {
-        position: { x: r, y: r, z: r },
-        signed: true,
-      },
+      { position: { x: r, y: r, z: r }, signed: true },
       {
         position: { x: 0, y: r * GOLDEN_RATIO, z: r / GOLDEN_RATIO },
         signed: true,

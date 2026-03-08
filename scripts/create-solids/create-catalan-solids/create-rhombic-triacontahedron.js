@@ -7,12 +7,8 @@ const createRhombicTriacontahedron = ({ scale = 1, colors = [] }) => {
     scale,
     colors,
 
-    maximumNumberOfFacesShareTheSameVertex: 5,
     baseVertices: [
-      {
-        position: { x: 1, y: 1, z: 1 },
-        signed: true,
-      },
+      { position: { x: 1, y: 1, z: 1 }, signed: true },
       {
         position: { x: 0, y: 1, z: GOLDEN_RATIO },
         signed: true,

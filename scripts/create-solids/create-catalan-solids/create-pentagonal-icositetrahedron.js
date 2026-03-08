@@ -6,7 +6,6 @@ const createPentagonalIcositetrahedron = ({ scale = .3, colors = [] }) => {
     scale,
     colors,
 
-    maximumNumberOfFacesShareTheSameVertex: 3,
     baseVertices: [
       {
         position: {

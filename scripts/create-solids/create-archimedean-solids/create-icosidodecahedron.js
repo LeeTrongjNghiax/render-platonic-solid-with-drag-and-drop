@@ -6,13 +6,8 @@ const createIcosidodecahedron = ({ scale = 1.9, colors = [] }) => {
     scale,
     colors,
 
-    maximumNumberOfFacesShareTheSameVertex: 4,
     baseVertices: [
-      {
-        position: { x: 1, y: 0, z: 0 },
-        signed: true,
-        permutationType: `even`,
-      },
+      { position: { x: 1, y: 0, z: 0 }, signed: true, permutationType: `even` },
       {
         position: { x: GOLDEN_RATIO / 2, y: 1 / (GOLDEN_RATIO * 2), z: 1 / 2 },
         signed: true,

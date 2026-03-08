@@ -9,22 +9,10 @@ const createDisdyakisDodecahedron = ({ scale = 7, colors = [] }) => {
     scale,
     colors,
 
-    maximumNumberOfFacesShareTheSameVertex: 8,
     baseVertices: [
-      {
-        position: { x: a, y: 0, z: 0 },
-        signed: true,
-        permutationType: `even`,
-      },
-      {
-        position: { x: b, y: b, z: 0 },
-        signed: true,
-        permutationType: `even`,
-      },
-      {
-        position: { x: c, y: c, z: c },
-        signed: true,
-      },
+      { position: { x: a, y: 0, z: 0 }, signed: true, permutationType: `even` },
+      { position: { x: b, y: b, z: 0 }, signed: true, permutationType: `even` },
+      { position: { x: c, y: c, z: c }, signed: true },
     ],
   });
 }

@@ -5,7 +5,6 @@ const createTruncatedTetrahedron = ({ scale = 1.5, colors = [] }) => {
     scale,
     colors,
 
-    maximumNumberOfFacesShareTheSameVertex: 3,
     baseVertices: [
       {
         position: {

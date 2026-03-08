@@ -9,17 +9,13 @@ const createPentakisDodecahedron = ({ scale = 1, colors = [] }) => {
     scale,
     colors,
 
-    maximumNumberOfFacesShareTheSameVertex: 5,
     baseVertices: [
       {
         position: { x: 0, y: a, z: GOLDEN_RATIO * a },
         signed: true,
         permutationType: `even`,
       },
-      {
-        position: { x: 1, y: 1, z: 1 },
-        signed: true,
-      },
+      { position: { x: 1, y: 1, z: 1 }, signed: true },
       {
         position: { x: 0, y: GOLDEN_RATIO, z: RECIPROCAL_OF_GOLDEN_RATION },
         signed: true,

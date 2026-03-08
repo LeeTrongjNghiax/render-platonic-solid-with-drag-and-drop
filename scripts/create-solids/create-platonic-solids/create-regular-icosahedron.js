@@ -6,7 +6,6 @@ const createRegularIcosahedron = ({ scale = 1, colors = [] }) => {
     scale,
     colors,
 
-    maximumNumberOfFacesShareTheSameVertex: 5,
     baseVertices: [
       {
         position: { x: 0, y: 1, z: GOLDEN_RATIO },

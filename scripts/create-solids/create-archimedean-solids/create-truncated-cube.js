@@ -6,14 +6,9 @@ const createTruncatedCube = ({ scale = 1.3, colors = [] }) => {
     scale,
     colors,
 
-    maximumNumberOfFacesShareTheSameVertex: 3,
     baseVertices: [
       {
-        position: {
-          x: 1 / SILVER_RATIO,
-          y: 1,
-          z: 1,
-        },
+        position: { x: 1 / SILVER_RATIO, y: 1, z: 1 },
         signed: true,
         permutationType: `even`,
       },

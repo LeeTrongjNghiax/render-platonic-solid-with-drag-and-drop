@@ -3,13 +3,7 @@ const createPentagonalHexecontahedron = ({ scale = 1, colors = [] }) => {
     scale,
     colors,
 
-    maximumNumberOfFacesShareTheSameVertex: 3,
-    baseVertices: [
-      {
-        position: { x: 0, y: 0, z: 0 },
-        signed: true,
-      },
-    ],
+    baseVertices: [ { position: { x: 0, y: 0, z: 0 }, signed: true } ],
   });
 }
 
