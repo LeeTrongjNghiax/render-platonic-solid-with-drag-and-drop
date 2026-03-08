@@ -204,6 +204,8 @@ const createRegularSolid = ({
 
   const vertexIndexBuffersArray = [];
 
+  let currentFaceIndex = 0;
+
   for (let i = 0; i < faces.length; i++) {
     let indicesShiftings = [0, 1, 2, 0, 2, 1];
 
@@ -232,10 +234,12 @@ const createRegularSolid = ({
     }
 
     const indices = indicesShiftings.map(
-      index => i * faces[i].vertices.length + index
+      index => currentFaceIndex + index
     );
 
     vertexIndexBuffersArray.push(...indices);
+
+    currentFaceIndex += faces[i].vertices.length;
   }
 
   return {
